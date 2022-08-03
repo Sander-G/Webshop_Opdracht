@@ -1,26 +1,28 @@
 import './App.css'
-import {useState} from 'react';
+import React, { useState } from "react";
+import FunctionalComponent from "./FunctionalComponent";
+import ClassComponent from "./ClassComponent";
 
 function App() {
-  const [message, setMessage] = useState('Jens');
 
-  const handleChange = event => {
-    setMessage(event.target.value);
+const [InputData, setInputData] = useState('jens')                // state toevoegen aan component 
 
-    // console.log('value is:', event.target.value);
-  };
+function handleInput (e) {                                        // functie om input events te handelen 
+setInputData(e.target.value)
+}
+                                                                  // console.log(InputData)
 
   return (
-    <div className='app'>
-      <input
-        type="text"
-        id="message"
-        name="message"
-        onChange={handleChange} />
 
-      <p>Hello Function {message}!</p>
+    <div className="app">                                         {/* div met een beetje styling */}
+      <h3>React Class & Functional Components</h3>                {/* titel */}
+ <input type="text" onChange={handleInput} value={InputData}/>    {/* input met eventhandler en standaardwaarde */}
+      <FunctionalComponent />
+      <ClassComponent />
     </div>
+
   );
+
 }
 
 export default App;
