@@ -1,24 +1,22 @@
 import './App.css'
 import React, { useState } from "react";
-import FunctionalComponent from "./FunctionalComponent";
-import ClassComponent from "./ClassComponent";
+import FunctionalComponent from "./Comps/FunctionalComponent_opdr2";
+import ClassComponent from "./Comps/ClassComponent_opdr2";
 
 function App() {
 
-const [InputData, setInputData] = useState('jens')                // state toevoegen aan component 
-
-function handleInput (e) {                                        // functie om input events te handelen 
-setInputData(e.target.value)
-}
-                                                                  // console.log(InputData)
+  const [InputData, setInputData] = useState('');                       // state toevoegen aan component 
+                                                                            // = vergelijkbaar met state object declaratie in class based component //
+                                                                            
 
   return (
 
-    <div className="app">                                         {/* div met een beetje styling */}
-      <h3>React Class & Functional Components</h3>                {/* titel */}
- <input type="text" onChange={handleInput} value={InputData}/>    {/* input met eventhandler en standaardwaarde */}
-      <FunctionalComponent />
-      <ClassComponent />
+    <div className="app">                                                 {/* div met een beetje styling */}
+      <h3>Opdracht Shared State</h3>                                      {/* titel */}
+
+      <FunctionalComponent input={InputData} setInput={setInputData}/>                           {/* call functional component en pass input naar component */}
+      <ClassComponent input={InputData} setInput={setInputData}/>   
+                                                                                             {/* call class component en pass input naar component */}
     </div>
 
   );
