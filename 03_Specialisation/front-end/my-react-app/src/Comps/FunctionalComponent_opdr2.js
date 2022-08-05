@@ -1,28 +1,24 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 
-function FunctionalComponent() {
-
-  const [InputData, setInputData] = useState(''); 
-
-  function handleInput(e) {                                              
-    setInputData(e.target.value)
- };
-  
-                                                                // console.log(InputData)         
+function FunctionalComponent(props) {
 
   return (
-      <div className="app">
-<input value={InputData} type="text" onChange={handleInput} />
 
-  <h2>Hello Functional Component {InputData}!</h2>
 
-</div>
+    <div className="app">
+      <h2>Hello Functional Component {props.inputData}!</h2>
 
-)};
+      <input onChange={(event) => props.setInputData(event.target.value)} />
+
+
+    </div>
+
+  )
+};
 
 export default FunctionalComponent;
 
 
 
 
- 
+
