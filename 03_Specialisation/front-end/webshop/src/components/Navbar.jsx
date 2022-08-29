@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 export function Navbar () {
     return (
     <NavbarBS className="bg-white shadow-sm mb-3">
-        <Container>
+        <Container >
             <Nav className="me-auto">
                 <Nav.Link to="/" as={NavLink}>
                 Home
@@ -13,7 +13,9 @@ export function Navbar () {
                 Store
                 </Nav.Link>
             </Nav>
-            <button></button>
+            <button style>
+              
+            </button>
         </Container>
     </NavbarBS>
 
