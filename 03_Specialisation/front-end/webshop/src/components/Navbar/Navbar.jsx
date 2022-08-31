@@ -1,16 +1,14 @@
-import styled from "styled-components"
-import { colors } from '../../elements/GlobalStyle'
-import CartSrc from "./../../images/skateCart.png"
-import HeartSrc from "./../../images/skateHeart.png"
+import styled from "styled-components";
+import CartSrc from "./../../images/skateCart.png";
+import HeartSrc from "./../../images/skateHeart.png";
 import Badge from "@material-ui/core/Badge";
-import  BannerSrc  from "./../../images/Banner.png"
-import LogoSrc from "./../../images/logo.png"
-import { shadows } from '@mui/system';
+import  BannerSrc  from "./../../images/Banner.png";
+import LogoSrc from "./../../images/logo.png";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
   } from "react-router-dom";
 
 
@@ -94,7 +92,7 @@ margin-top: -.5rem;
 
   height: 8rem;
   margin-top: 3rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
   margin-right: 1rem;
   
   `

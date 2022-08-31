@@ -20,8 +20,12 @@ const  GlobalStyle  =  createGlobalStyle`
         position: relative;
 
     }
-    code  {
-        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+
+    h1, h3, p {
+        text-shadow: 1px 1px #2b2b28;
+
+        
     }
     
     

@@ -6,6 +6,7 @@ export function NewArrival() {
     return (
         <Container>
             <h1>New Arrivals</h1>
+            <p>Freshly rolled into our store.</p>
         </Container>
         )
 };
@@ -19,8 +20,10 @@ const Container = styled.div`
   color: ${colors.secondary};
   font-size: 1.2rem;
   border-radius: 5px;
+  line-height: .2rem;
   bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
  ` 

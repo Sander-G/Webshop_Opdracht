@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors } from '../../elements/GlobalStyle'
+
 
 export default function Footer() {
     return (
         <Container>
             <div>Links go here</div>
             <div>More links go here</div>
+            <div>Yet more links go here</div>
+            <div>© Skippy's Vintage Skateboards - 2022</div>
         </Container>
     )
 }
