@@ -4,6 +4,7 @@ import CartSrc from "./../../images/skateCart.png"
 import HeartSrc from "./../../images/skateHeart.png"
 import Badge from "@material-ui/core/Badge";
 import  BannerSrc  from "./../../images/Banner.png"
+import LogoSrc from "./../../images/logo.png"
 import { shadows } from '@mui/system';
 import {
     BrowserRouter as Router,
@@ -17,9 +18,11 @@ export function Navbar () {
     return (
 <Container>
 <div className="Logo">
-<Link to="/"><h1>Logo</h1></Link>
+<Link to="/"><Logo/></Link>
 
 </div>
+
+
 <Banner></Banner>
 <NavItems>
 <Badge color="secondary" overlap="circle" badgeContent={8} >
@@ -47,14 +50,14 @@ height: 5rem;
 padding: 1em;
 position: fixed;
 top: 0;
-width: 100%;
-box-shadow: 0 0 15px smokewhite;
+width: 100vw;
 `
 
 const NavItems = styled.div`
 display: flex;
 flex-direction: row;
 padding: 3em;
+margin-right: 2rem;
 `
 
 const Favourites = styled.img.attrs({
@@ -72,15 +75,26 @@ const Cart = styled.img.attrs({
   height: 50px;
   padding: .2rem;
   margin-left: .8em;
+ 
   `;
 
 const Banner = styled.img.attrs({
     src: `${BannerSrc}`
   })`
-  max-width: 40vw;
-  max-height: 6rem;
+  max-width: auto;
+  max-height: 5rem;
 margin-top: -.5rem;
-margin-left: 4rem;
-  padding: .2rem;
+
 
   `;
+
+  const Logo = styled.img.attrs({
+    src: `${LogoSrc}`
+  })`
+
+  height: 8rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  
+  `

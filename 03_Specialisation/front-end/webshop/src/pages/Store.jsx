@@ -13,7 +13,7 @@ export function Store() {
         <>
             <GlobalStyle />
             <Container>
-                <h1>Store</h1>
+               
                 <ProdCatWrapper>
                     <Vintage>
                         <h3>Vintage</h3>
@@ -47,7 +47,7 @@ const Vintage = styled.div`
   height: 28.5vh;
   background-image: url(${vintageSrc});
   background-size: cover;
-  opacity: 70%;
+  
   color: white;
   font-size: 1.2rem;
   border-radius: 5px;
@@ -62,7 +62,7 @@ const Reissue = styled.div`
   height: 28.5vh;
   background-image: url(${reissueSrc});
   background-size: cover;
-  opacity: 70%;
+  
   background-position: center;
   color: white;
   font-size: 1.2rem;
@@ -83,7 +83,6 @@ const Parts = styled.div`
   color: white;
   font-size: 1.2rem;
   border-radius: 5px;
-  opacity: 70%;
   bottom: 0;
   display: flex;
   align-items: center;

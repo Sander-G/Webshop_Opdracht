@@ -1,9 +1,10 @@
 
 import GlobalStyle from "../elements/GlobalStyle"
 import styled from "styled-components"
-import colors from "../elements/GlobalStyle"
 import { Store } from "./Store"
 import { NewArrival } from "../components/NewArrival/NewArrival"
+import { NewsLetter } from "../components/NewsLetter/NewsLetter"
+
 
 
 
@@ -13,9 +14,12 @@ export function Home() {
         <>
         <GlobalStyle />
         <Container>
-    <h1>Home</h1>
+
     <NewArrival />
+    
     <Store />
+  
+    <NewsLetter />
     </Container>
     </>
     )
@@ -23,9 +27,13 @@ export function Home() {
 
 const Container = styled.div`
   width: 100%;
-  padding-top: 6rem;
+  padding-top: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  
  ` 
