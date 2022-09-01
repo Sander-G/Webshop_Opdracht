@@ -1,11 +1,11 @@
 import styled from "styled-components"
-import { colors } from '../../elements/GlobalStyle'
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg"
+import { Link } from "react-router-dom";
 
 export function NewArrival() {
     return (
         <Container>
-            <h1>New Arrivals</h1>
+            <Link to="/NewArrivals"><HeaderText>New Arrivals</HeaderText></Link>
             <p>Freshly rolled into our store.</p>
         </Container>
         )
@@ -13,11 +13,10 @@ export function NewArrival() {
 
 const Container = styled.div`
   width: 90vw;
-  height: 20vh;
-  /* background-color: ${colors.tertiary}; */
+  height: 25vh;
   background-image: url(${backgroundSrc});
   background-size: cover;
-  color: ${colors.secondary};
+  color: white;
   font-size: 1.2rem;
   border-radius: 5px;
   line-height: .2rem;
@@ -25,5 +24,17 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
- ` 
+  flex-direction: column;  
+ `;
+
+ const HeaderText = styled.h1`
+
+&:hover  {
+    transition: scale 0.2s ease-in-out;
+        scale: 1.05;
+  
+  }
+
+
+
+ `;

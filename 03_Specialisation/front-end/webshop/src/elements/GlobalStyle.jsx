@@ -27,6 +27,18 @@ const  GlobalStyle  =  createGlobalStyle`
 
         
     }
+
+    a, a:visited, a:active, a:link {
+
+        text-decoration: none;
+        cursor: pointer;
+        color: white;
+
+    }
+ 
+
+    
+
     
     
 `;
