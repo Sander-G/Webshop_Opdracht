@@ -1,11 +1,11 @@
 import styled from "styled-components"
-import backgroundSrc from "../images/reissueCatWide.jpg"
-export function Reissue() {
+import backgroundSrc from "../images/partsCatWide.png"
+export function Parts() {
     return (
         <Container>
         <Wrapper>
-          <h1> Reissued Skateboards </h1>
-          <p>Fresh classic skateboard designs </p>
+          <h1> Skateboard Parts</h1>
+          <p>Quality hardware for your board. </p>
         </Wrapper>
         </Container>
         )
@@ -32,7 +32,6 @@ const Wrapper = styled.div`
   background-image: url(${backgroundSrc});
   background-size: cover;
   background-position: center;
-  
   color: white;
   font-size: 1.2rem;
   border-radius: 5px;

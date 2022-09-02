@@ -15,13 +15,19 @@ export function Navbar() {
       <Link to="/"><Logo/></Link>
       <Link to="/"><Banner/></Link>
       <NavItems>
-          <Badge color="secondary" overlap="circle" badgeContent={8} >
-            <Favourites />
+          <Badge color="secondary" overlap="circle" badgeContent={1} >
+            <Link to="/Favourites">
+              <Favourites />
+            </Link>
           </Badge>
-          <Badge color="secondary" overlap="circle" badgeContent={3} >
-            <Cart />
+          <Badge color="secondary" overlap="circle" badgeContent={1} >
+            <Link to="/ShoppingCart">
+              <Cart />
+            </Link>
           </Badge>
+            <Link to="/Login">
             <Login />
+            </Link>
       </NavItems>
     </Container>
 
