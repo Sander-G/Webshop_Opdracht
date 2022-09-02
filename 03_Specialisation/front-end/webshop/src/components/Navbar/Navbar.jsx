@@ -13,7 +13,7 @@ export function Navbar() {
     <Container>
 
       <Link to="/"><Logo/></Link>
-      <Banner/>
+      <Link to="/"><Banner/></Link>
       <NavItems>
           <Badge color="secondary" overlap="circle" badgeContent={8} >
             <Favourites />

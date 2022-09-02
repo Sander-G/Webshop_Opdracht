@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-export default function Footer() {
+export function Footer() {
     return (
         <Container>
             <div>Links go here</div>

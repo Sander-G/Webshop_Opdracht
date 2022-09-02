@@ -2,7 +2,7 @@ import styled from "styled-components"
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg"
 import { Link } from "react-router-dom";
 
-export function NewArrival() {
+export function NewArrivalBanner() {
     return (
         <Container>
             <Link to="/NewArrivals"><HeaderText>New Arrivals</HeaderText></Link>

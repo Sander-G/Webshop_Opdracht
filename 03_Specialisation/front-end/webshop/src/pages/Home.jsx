@@ -1,8 +1,8 @@
 
 import GlobalStyle from "../elements/GlobalStyle"
 import styled from "styled-components"
-import { Store } from "./Store"
-import { NewArrival } from "../components/NewArrival/NewArrival"
+import { ProdCats } from "../components/ProdCats/ProdCats"
+import { NewArrivalBanner } from "../components/NewArrival/NewArrivalBanner"
 import { NewsLetter } from "../components/NewsLetter/NewsLetter"
 
 
@@ -12,16 +12,13 @@ export function Home() {
 
     return (
         <>
-        <GlobalStyle />
-        <Container>
-
-    <NewArrival />
-    
-    <Store />
-  
-    <NewsLetter />
-    </Container>
-    </>
+            <GlobalStyle />
+            <Container>
+                <NewArrivalBanner />
+                <ProdCats />
+                <NewsLetter />
+            </Container>
+        </>
     )
 };
 

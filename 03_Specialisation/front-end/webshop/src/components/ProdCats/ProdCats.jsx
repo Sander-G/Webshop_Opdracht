@@ -1,14 +1,14 @@
 
-import GlobalStyle from "../elements/GlobalStyle"
+import GlobalStyle from "../../elements/GlobalStyle"
 import styled from "styled-components"
-import colors from "../elements/GlobalStyle"
-import vintageSrc from "../images/vintageCat.jpg"
-import reissueSrc from "../images/reissueCat.jpg"
-import partsSrc from "../images/partsCat.jpg"
+import colors from "../../elements/GlobalStyle"
+import vintageSrc from "../../images/vintageCat.jpg"
+import reissueSrc from "../../images/reissueCat.jpg"
+import partsSrc from "../../images/partsCat.jpg"
 import { Link } from "react-router-dom";
 
 
-export function Store() {
+export function ProdCats() {
 
   return (
     <>
