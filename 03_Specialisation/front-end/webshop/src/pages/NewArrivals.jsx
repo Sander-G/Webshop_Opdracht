@@ -1,12 +1,15 @@
 import styled from "styled-components"
 import backgroundSrc from "./../images/newArrivalsBanner.jpg"
 import { NewArrivalBanner } from "../components/NewArrival/NewArrivalBanner";
+import Product from "../components/Product/Product";
 export function NewArrivals() {
     return (
         <Container>
         <Wrapper>
         <h1>New Arrivals</h1>
+        <p>Freshly rolled into our store.</p>
         </Wrapper>
+        <Product/>
         </Container>
         )
 };
