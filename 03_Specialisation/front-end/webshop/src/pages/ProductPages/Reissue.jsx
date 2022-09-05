@@ -1,15 +1,12 @@
 import styled from "styled-components"
-import backgroundSrc from "./../images/newArrivalsBanner.jpg"
-import { NewArrivalBanner } from "../components/NewArrival/NewArrivalBanner";
-import Product from "../components/Product/Product";
-export function NewArrivals() {
+import backgroundSrc from "../../images/reissueCatWide.jpg"
+export function Reissue() {
     return (
         <Container>
         <Wrapper>
-        <h1>New Arrivals</h1>
-        <p>Freshly rolled into our store.</p>
+          <h1> Reissued Skateboards </h1>
+          <p>Fresh classic skateboard designs </p>
         </Wrapper>
-        <Product/>
         </Container>
         )
 };
@@ -34,6 +31,8 @@ const Wrapper = styled.div`
   height: 25vh;
   background-image: url(${backgroundSrc});
   background-size: cover;
+  background-position: center;
+  
   color: white;
   font-size: 1.2rem;
   border-radius: 5px;

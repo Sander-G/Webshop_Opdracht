@@ -16,8 +16,10 @@ export default function Product() {
             <p>Title</p>
             <p>Description:</p>
             <p>Price: €100</p>
-            <button> add to Cart</button>
-            <button> add to Wishlist</button>
+
+            <button>View Item</button>
+            <button>Add to Cart</button>
+            <button>Add to Wishlist</button>
     </ProductInfo>
 
     </ProductPage>

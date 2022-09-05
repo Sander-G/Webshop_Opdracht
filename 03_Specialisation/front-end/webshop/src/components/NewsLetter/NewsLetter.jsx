@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { colors } from '../../elements/GlobalStyle'
+import { colors } from '../../styles/GlobalStyle'
 import backgroundSrc from "./../../images/newsletterBanner.jpg"
 
 export function NewsLetter() {

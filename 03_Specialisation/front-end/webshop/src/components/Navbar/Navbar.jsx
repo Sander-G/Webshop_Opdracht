@@ -1,28 +1,30 @@
+// Styling
 import styled from "styled-components";
+import Badge from "@material-ui/core/Badge";
+// Functioneel
+import { Link } from "react-router-dom";
+// Images
 import CartSrc from "./../../images/skateCart.png";
 import HeartSrc from "./../../images/skateHeart.png";
-import Badge from "@material-ui/core/Badge";
 import BannerSrc from "./../../images/Banner.png";
-import LogoSrc from "./../../images/logo.png";
+import LogoSrc from "./../../images/skippy.png";
 import LoginSrc from "./../../images/loginIcon.png";
-import { Link } from "react-router-dom";
-
 
 export function Navbar() {
   return (
     <Container>
-
       <Link to="/"><Logo/></Link>
       <Link to="/"><Banner/></Link>
+      
       <NavItems>
           <Badge color="secondary" overlap="circular" badgeContent={1} >
             <Link to="/Favourites">
-              <Favourites />
+            <Favourites />
             </Link>
           </Badge>
           <Badge color="secondary" overlap="circular" badgeContent={1} >
             <Link to="/ShoppingCart">
-              <Cart />
+            <Cart />
             </Link>
           </Badge>
             <Link to="/Login">
@@ -30,11 +32,8 @@ export function Navbar() {
             </Link>
       </NavItems>
     </Container>
-
   )
 };
-
-
 
 // styled components //
 const Container = styled.div`
@@ -72,38 +71,30 @@ const Cart = styled.img.attrs({
   height: 40px;
   padding: .2rem;
   margin-left: .8em;
-  `;
+`;
 
 const Banner = styled.img.attrs({
   src: `${BannerSrc}`
 })`
   max-width: auto;
   max-height: 5rem;
-margin-top: -.5rem;
-
-
-  `;
+  margin-top: -.5rem;
+`;
 
 const Logo = styled.img.attrs({
   src: `${LogoSrc}`
 })`
-
-  height: 8rem;
-  margin-top: 3rem;
+  height: 6rem;
   margin-left: 2rem;
   margin-right: 1rem;
-  
-  `;
+`;
 
 const Login = styled.img.attrs({
   src: `${LoginSrc}`
 })`
-  
   width: 30px;
   height: 30px;
   padding: .2rem;
   margin-left: .8em;
   margin-top: 6px;
-
-  
-  `;
+`;

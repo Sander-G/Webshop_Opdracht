@@ -1,7 +1,7 @@
 
-import GlobalStyle from "../../elements/GlobalStyle"
+import GlobalStyle from "../../styles/GlobalStyle"
 import styled from "styled-components"
-import colors from "../../elements/GlobalStyle"
+import colors from "../../styles/GlobalStyle"
 import vintageSrc from "../../images/vintageCat.jpg"
 import reissueSrc from "../../images/reissueCat.jpg"
 import partsSrc from "../../images/partsCat.jpg"

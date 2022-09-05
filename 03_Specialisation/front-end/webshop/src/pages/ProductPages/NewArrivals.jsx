@@ -1,20 +1,14 @@
 import styled from "styled-components"
-import backgroundSrc from "./../images/vintageCatWide.jpg"
-import Product from "../components/Product/Product";
-
-export function Vintage() {
+import backgroundSrc from "./../../images/newArrivalsBanner.jpg"
+import Product from "../../components/Products/Product";
+export function NewArrivals() {
     return (
         <Container>
         <Wrapper>
-          <h1> Vintage Skateboards </h1>
+        <h1>New Arrivals</h1>
+        <p>Freshly rolled into our store.</p>
         </Wrapper>
-        <ProductsWrapper>
         <Product/>
-        <Product/>
-        <Product/>
-        
-        </ProductsWrapper>
-
         </Container>
         )
 };
@@ -30,16 +24,8 @@ const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
- `;
- 
- const ProductsWrapper = styled.div`
- margin-top: 1rem;
- display:flex;
- flex-direction: row;
- width: 90vw;
- justify-content: space-between;
-
- `;
+  
+ ` 
 
 
 const Wrapper = styled.div`
@@ -47,7 +33,6 @@ const Wrapper = styled.div`
   height: 25vh;
   background-image: url(${backgroundSrc});
   background-size: cover;
-  background-position: 0px -20px;
   color: white;
   font-size: 1.2rem;
   border-radius: 5px;
