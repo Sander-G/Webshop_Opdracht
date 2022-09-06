@@ -12,7 +12,7 @@ import { Parts } from "./pages/ProductPages/Parts"
 import { Favourites } from "./pages/Favourites/Favourites"
 import { ShoppingCart } from "./pages/ShoppingCart/ShoppingCart"
 import { Login } from "./pages/Login/Login"
-import NotFound from './components/404/NotFound'; 
+import NotFound from './components/NotFound/NotFound'; 
 
 // Redux
 import store from './redux/store';
