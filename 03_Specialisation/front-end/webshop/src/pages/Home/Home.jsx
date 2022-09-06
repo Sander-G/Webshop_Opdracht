@@ -1,8 +1,8 @@
 
 import GlobalStyle from "../../styles/GlobalStyle"
 import styled from "styled-components"
-import { ProdCats } from "../../components/ProdCats/ProdCats"
 import { NewArrivalBanner } from "../../components/NewArrival/NewArrivalBanner"
+import { ProdCats } from "../../components/ProdCats/ProdCats"
 import { NewsLetter } from "../../components/NewsLetter/NewsLetter"
 
 
