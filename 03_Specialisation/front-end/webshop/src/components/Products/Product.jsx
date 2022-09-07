@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import PicSrc from '../../data/imgs/product1.jpg'
+// import PicSrc from '../../data/imgs/product1.jpg'
 
 export default function Product() {
   return (
@@ -8,7 +8,7 @@ export default function Product() {
     
     <ProductPage>
       <PictureDiv>
-      <ProductPicture />
+      {/* <ProductPicture /> */}
       </PictureDiv>
         <ProductInfo>
             <p>ID</p> 
@@ -55,15 +55,15 @@ position: relative;
 `;
 
 
-const ProductPicture = styled.img.attrs({
-  src: `${PicSrc}`
-})`
-  padding: .1rem;
-  overflow: none;
-  object-fit: contain;
+// const ProductPicture = styled.img.attrs({
+//   src: `${PicSrc}`
+// })`
+//   padding: .1rem;
+//   overflow: none;
+//   object-fit: contain;
 
 
-`;
+// `;
 
 const ProductInfo = styled.div`
 display: flex;

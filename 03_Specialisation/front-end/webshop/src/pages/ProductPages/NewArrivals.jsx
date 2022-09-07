@@ -8,6 +8,8 @@ export function NewArrivals() {
         <h1>New Arrivals</h1>
         <p>Freshly rolled into our store.</p>
         </Wrapper>
+
+        
         <Product/>
         </Container>
         )
