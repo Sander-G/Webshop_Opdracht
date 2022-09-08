@@ -1,8 +1,13 @@
 import styled from "styled-components"
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg"
 import Product from "../../components/Products/Product";
+
+import { useGetAllProductsQuery } from "../../features/productsAPI"
+
+
 export function NewArrivals() {
-    return (
+  const {data, error, isLoading} = useGetAllProductsQuery()  
+  return (
         <Container>
         <Wrapper>
         <h1>New Arrivals</h1>

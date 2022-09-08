@@ -5,7 +5,7 @@ import { NewArrivalBanner } from "../../components/NewArrival/NewArrivalBanner"
 import { ProdCats } from "../../components/ProdCats/ProdCats"
 import { NewsLetter } from "../../components/NewsLetter/NewsLetter"
 
-import { useGetAllProductsQuery } from "../../features/productsAPI"
+
 
 
 
@@ -13,7 +13,7 @@ import { useGetAllProductsQuery } from "../../features/productsAPI"
 
 const Home = () => {
 
-   const {data, error, isLoading} = useGetAllProductsQuery()
+
     return (
         
         <>
