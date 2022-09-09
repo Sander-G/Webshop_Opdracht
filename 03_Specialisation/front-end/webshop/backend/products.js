@@ -4,7 +4,7 @@ const products = [
         {
           id: "1",
           title: "Skateboard 1",
-          desc: "This is a description of the skateboard nr. 1",
+          desc: "This is a description of the skateboard nr. 1 This is a description of the skateboard nr. 1 ",
           category: "NewArrival",
           price: "100",
           image: "https://res.cloudinary.com/ordinator/image/upload/v1662468986/SkippySkateboards/product5_zvb9i1.jpg",
@@ -12,7 +12,7 @@ const products = [
         {
           id: "2",
           title: "Skateboard 2",
-          desc: "This is a description of the skateboard nr. 2",
+          desc: "This is a description of the skateboard nr. 2 This is a description of the skateboard nr. 2",
           category: "Vintage",
           price: "100",
           image: "https://res.cloudinary.com/ordinator/image/upload/v1662468986/SkippySkateboards/product4_kmwiws.jpg",
@@ -20,7 +20,7 @@ const products = [
         {
           id: "3",
           title: "Skateboard 3",
-          desc: "This is a description of the skateboard nr. 3",
+          desc: "This is a description of the skateboard nr. 3 This is a description of the skateboard nr. 3",
           category: "Reissue",
           price: "100",
           image: "https://res.cloudinary.com/ordinator/image/upload/v1662468986/SkippySkateboards/product6_vpuyoh.jpg",
@@ -47,7 +47,7 @@ const products = [
           desc: "This is a description of the skateboard nr. 6",
           category: "Parts",
           price: "100",
-          image: "https://res.cloudinary.com/ordinator/image/upload/v1662468986/SkippySkateboards/product1_zjlbsq.jpg",
+          image: "https://res.cloudinary.com/ordinator/image/upload/v1662468986/SkippySkateboards/product3_jg6xhh.jpg",
         }
 
 ];

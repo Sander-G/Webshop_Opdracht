@@ -20,6 +20,7 @@ const Container = styled.footer`
   justify-content: space-evenly;
   align-items: center;
   height: 2rem;
+  margin-top: 2rem;
   position: absolute;
   bottom: 0;
   border-top: 1px solid black;

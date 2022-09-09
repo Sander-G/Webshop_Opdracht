@@ -13,7 +13,7 @@ export function ShoppingCart() {
 
 const Container = styled.div`
   width: 100%;
-  padding-top: .5rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,8 +21,7 @@ const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  
- ` 
+ `;
 
 
 const Wrapper = styled.div`
