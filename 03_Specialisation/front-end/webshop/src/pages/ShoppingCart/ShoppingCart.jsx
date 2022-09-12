@@ -1,5 +1,6 @@
 import styled from "styled-components"
-
+import { getTotals } from "../../features/cartSlice";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, clearCart, decreaseCartQty, removeFromCart } from "../../features/cartSlice";
@@ -7,102 +8,106 @@ import { addToCart, clearCart, decreaseCartQty, removeFromCart } from "../../fea
 
 const ShoppingCart = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch ()
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart]);
+
   const handleRemoveFromCart = (cartItem) => {
-    dispatch (removeFromCart (cartItem))
+    dispatch(removeFromCart(cartItem))
   }
   const handleDecreaseCartQty = (cartItem) => {
-    dispatch (decreaseCartQty (cartItem))
+    dispatch(decreaseCartQty(cartItem))
   }
   const handleIncreaseCartQty = (cartItem) => {
-    dispatch (addToCart (cartItem))
+    dispatch(addToCart(cartItem))
   }
   const handleClearCart = () => {
-    dispatch (clearCart());
+    dispatch(clearCart());
   }
 
 
-    return (
-       <>    
-       <Container>
-       <Header>Shopping Cart</Header>
-       
-       
-        { cart.cartItems.length === 0 ? (
+  return (
+    <>
+      <Container>
+        <Header>Shopping Cart</Header>
+
+
+        {cart.cartItems.length === 0 ? (
           <EmptyCart>
             <p> Your Cart is empty</p>
             <StartShopping>
-            <Link to="/"><h4>Start Shopping</h4></Link>
+              <Link to="/"><h4>Start Shopping</h4></Link>
             </StartShopping>
-            </EmptyCart>
-         
+          </EmptyCart>
+
         ) : (
           <>
             <Titles>
-            <ProductName>Product</ProductName>
-            <h3 className="price">Price</h3>
-            <h3 className="quantity">Quantity</h3>
-            <Total>Total</Total>
+              <ProductName>Product</ProductName>
+              <h3 className="price">Price</h3>
+              <h3 className="quantity">Quantity</h3>
+              <Total>Total</Total>
             </Titles>
 
-              <div className="cartItems">
-                {cart.cartItems?.map(cartItem =>
-                (
-              <CartItem key= {cartItem.id}>
+            <div className="cartItems">
+              {cart.cartItems?.map(cartItem =>
+              (
+                <CartItem key={cartItem.id}>
                   <CartProduct>
                     <CartImage src={cartItem.image} alt={cartItem.name} />
-                      <div>
+                    <div>
                       <ItemTitle>{cartItem.title}</ItemTitle>
                       <p>{cartItem.desc}</p>
-                      <RemoveButton onClick= {() => handleRemoveFromCart(cartItem)}>Remove</RemoveButton>
-                      </div>
-                  </CartProduct> 
-                <div className="cart__product--Price">€ {cartItem.price}</div>
+                      <RemoveButton onClick={() => handleRemoveFromCart(cartItem)}>Remove</RemoveButton>
+                    </div>
+                  </CartProduct>
+                  <div className="cart__product--Price">€ {cartItem.price}</div>
                   <ProductQuantity>
                     <QuantityButton onClick={() => handleDecreaseCartQty(cartItem)}>-</QuantityButton>
                     <ProductCount>{cartItem.cartQuantity}</ProductCount>
                     <QuantityButton onClick={() => handleIncreaseCartQty(cartItem)}>+</QuantityButton>
                   </ProductQuantity>
-                <CartProductTotalPrice>
-                € {cartItem.price * cartItem.cartQuantity}
-                </CartProductTotalPrice>
-               </CartItem>
+                  <CartProductTotalPrice>
+                    € {cartItem.price * cartItem.cartQuantity}
+                  </CartProductTotalPrice>
+                </CartItem>
 
               ))}
             </div>
 
-            <CartSummary> 
+            <CartSummary>
               <ClearButton onClick={() => handleClearCart()}>Clear Cart</ClearButton>
-              
+
               <CartCheckout>
-              <SubTotal>
-              <span>Subtotal:</span>
-              <Amount>€ {cart.cartTotalAmount}</Amount>
-              </SubTotal>
-             
-            
-            
-            <p>Includes VAT, free shipping for all!</p>
-            <CheckOutButton>Check out</CheckOutButton>
-            
-            
-            <StartShopping>
-            <Link to="/"><h4>Continue Shopping..</h4></Link>
-            </StartShopping>
-            </CartCheckout>
+                <SubTotal>
+                  <span>Subtotal:</span>
+                  <Amount>€ {cart.cartTotalAmount}</Amount>
+                </SubTotal>
+
+
+
+                <p>Includes VAT, free shipping for all!</p>
+                <CheckOutButton>Check out</CheckOutButton>
+
+
+                <StartShopping>
+                  <Link to="/"><h4>Continue Shopping..</h4></Link>
+                </StartShopping>
+              </CartCheckout>
             </CartSummary>
-            
 
 
 
-        </>)}
+
+          </>)}
 
 
-        </Container>
-        </>
+      </Container>
+    </>
 
-    );
+  );
 };
 export default ShoppingCart;
 
@@ -125,7 +130,7 @@ text-align: center;
 color: black; 
 `;
 
- const Titles = styled.div`
+const Titles = styled.div`
   margin: 1rem 0 1rem 0;
   display: grid;
   align-items: center;
@@ -139,7 +144,7 @@ color: black;
 }
  `;
 
- const CartItem = styled.div`
+const CartItem = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: 3fr 1fr 1fr 1fr;
@@ -148,7 +153,7 @@ color: black;
   padding: 0.5rem 0;
  `
 
- const ProductName = styled.h3`
+const ProductName = styled.h3`
   padding-left: 0.5rem;
  `;
 
