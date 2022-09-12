@@ -22,11 +22,22 @@ const  GlobalStyle  =  createGlobalStyle`
     }
 
 
-    h1, h3, p {
+    h1, h2, h3, h4 {
         text-shadow: 1px 1px #2b2b28;
+        color: white;
 
         
     }
+
+
+     h4 {
+        ${'' /* text-shadow: 1px 1px #2b2b28; */}
+        color: black;
+
+        
+    }
+
+
 
     a, a:visited, a:active, a:link {
 

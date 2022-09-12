@@ -9,16 +9,17 @@ const ShoppingCart = () => {
     return (
        <>    
        <Container>
-       <Header>ShoppingCart</Header>
+       <Header>Shopping Cart</Header>
        
        
         { cart.cartItems.length === 0 ? (
-          <div className="emptyCart">
+          <EmptyCart>
             <p> Your Cart is empty</p>
-            <div className="startShopping">
-            <Link to="/"><p>Start Shopping</p></Link>
-            </div>
-          </div>
+            <StartShopping>
+            <Link to="/"><h4>Start Shopping</h4></Link>
+            </StartShopping>
+            </EmptyCart>
+         
         ) : (
           <>
             <Titles>
@@ -60,18 +61,18 @@ const ShoppingCart = () => {
               <CartCheckout>
               <SubTotal>
               <span>Subtotal:</span>
-              <span className="amount">€ {cart.cartTotalAmount}</span>
+              <Amount>€ {cart.cartTotalAmount}</Amount>
               </SubTotal>
              
             
             
-            <p>Includes VAT, free shipping above </p>
+            <p>Includes VAT, free shipping for all!</p>
             <CheckOutButton>Check out</CheckOutButton>
             
             
-            <div className="startShopping">
-            <Link to="/"><p>Continue Shopping</p></Link>
-            </div>
+            <StartShopping>
+            <Link to="/"><h4>Continue Shopping..</h4></Link>
+            </StartShopping>
             </CartCheckout>
             </CartSummary>
             
@@ -103,18 +104,22 @@ const Container = styled.div`
 const Header = styled.h2`
 font-weight: 400;
 font-size: 30px;
-text-align: center; 
+text-align: center;
+color: black; 
 `;
 
  const Titles = styled.div`
-  margin: 2rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
   display: grid;
   align-items: center;
   grid-template-columns: 3fr 1fr 1fr 1fr;
   column-gap: 0.5rem;
-  font-size: 14px;
-  font-weight: 400;
   text-transform: uppercase;
+  
+  & h3 {   font-size: 14px;
+    color: black;
+  font-weight: 400;
+}
  `;
 
  const CartItem = styled.div`
@@ -154,6 +159,7 @@ const RemoveButton = styled.button`
   cursor: pointer;
   background: none;
   color: black;
+  letter-spacing: 1.15px;
   &:hover {
     background-color: lightblue;
   }
@@ -163,7 +169,7 @@ const ProductQuantity = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: 130px;
+  width: 120px;
   max-width: 100%;
   border: 0.5px solid rgb(178,178,178);
   border-radius: 5px;
@@ -205,6 +211,7 @@ const ClearButton = styled.button`
   cursor: pointer;
   background: none;
   color: black;
+  letter-spacing: 1.15px;
   &:hover {
     background-color: lightblue;
   }
@@ -221,10 +228,16 @@ const SubTotal = styled.div`
   font-size: 20px;
 `;
 
+const Amount = styled.span`
+  font-weight: 700;
+`
+
 
 
 const CheckOutButton = styled.button`
-  
+  width: 100%;
+  height: 30px;
+  margin-right:1rem;
   border: 1px solid grey;
   border-radius: 5px;
   /* outline: none; */
@@ -232,10 +245,32 @@ const CheckOutButton = styled.button`
   cursor: pointer;
   background: none;
   color: black;
+  letter-spacing: 1.15px;
   &:hover {
     background-color: lightblue;
   }
 `;
+
+const StartShopping = styled.div`
+  font-size: 14px;
+  
+  font-weight: 600;
+  & h4 {
+    color: #d7732b;
+    text-shadow: none;
+  };
+`;
+
+const EmptyCart = styled.div`
+margin-top: 4rem;
+font-size: 20px;
+color: rgb(84,84,84);
+display: flex;
+flex-direction: column;
+align-items: center;
+  
+`;
+
 
 
 
