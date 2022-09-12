@@ -1,11 +1,28 @@
 import styled from "styled-components"
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart, clearCart, decreaseCartQty, removeFromCart } from "../../features/cartSlice";
 
 
 const ShoppingCart = () => {
   const cart = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch ()
+  const handleRemoveFromCart = (cartItem) => {
+    dispatch (removeFromCart (cartItem))
+  }
+  const handleDecreaseCartQty = (cartItem) => {
+    dispatch (decreaseCartQty (cartItem))
+  }
+  const handleIncreaseCartQty = (cartItem) => {
+    dispatch (addToCart (cartItem))
+  }
+  const handleClearCart = () => {
+    dispatch (clearCart());
+  }
+
+
     return (
        <>    
        <Container>
@@ -38,14 +55,14 @@ const ShoppingCart = () => {
                       <div>
                       <ItemTitle>{cartItem.title}</ItemTitle>
                       <p>{cartItem.desc}</p>
-                      <RemoveButton>Remove</RemoveButton>
+                      <RemoveButton onClick= {() => handleRemoveFromCart(cartItem)}>Remove</RemoveButton>
                       </div>
                   </CartProduct> 
                 <div className="cart__product--Price">€ {cartItem.price}</div>
                   <ProductQuantity>
-                    <QuantityButton>-</QuantityButton>
+                    <QuantityButton onClick={() => handleDecreaseCartQty(cartItem)}>-</QuantityButton>
                     <ProductCount>{cartItem.cartQuantity}</ProductCount>
-                    <QuantityButton>+</QuantityButton>
+                    <QuantityButton onClick={() => handleIncreaseCartQty(cartItem)}>+</QuantityButton>
                   </ProductQuantity>
                 <CartProductTotalPrice>
                 € {cartItem.price * cartItem.cartQuantity}
@@ -56,7 +73,7 @@ const ShoppingCart = () => {
             </div>
 
             <CartSummary> 
-              <ClearButton>Clear Cart</ClearButton>
+              <ClearButton onClick={() => handleClearCart()}>Clear Cart</ClearButton>
               
               <CartCheckout>
               <SubTotal>
@@ -91,10 +108,10 @@ export default ShoppingCart;
 
 
 const Container = styled.div`
-  width: 100vw;
+  width: 90vw;
+  margin-left: 5vw;
   padding-top: 6rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+
   display: grid;
   align-items: center;
   justify-content: center;
@@ -130,27 +147,32 @@ color: black;
   border-top: 1px solid rgb(178, 178, 178);
   padding: 0.5rem 0;
  `
+
  const ProductName = styled.h3`
   padding-left: 0.5rem;
- `
+ `;
 
 const Total = styled.h3`
 padding-right: 0.5rem;
 justify-self: right ;
 
-`
+`;
+
 const CartProduct = styled.div`
   display: flex;
-`
+`;
 
 const CartImage = styled.img`
   width: 150px;
   max-width: 100%;
+  max-height: 100%;
   margin-right: 1rem;
-`
+`;
+
 const ItemTitle = styled.h3`
   font-weight: 400;
-`
+`;
+
 const RemoveButton = styled.button`
   border: 1px solid grey;
   border-radius: 5px;
@@ -230,9 +252,7 @@ const SubTotal = styled.div`
 
 const Amount = styled.span`
   font-weight: 700;
-`
-
-
+`;
 
 const CheckOutButton = styled.button`
   width: 100%;
