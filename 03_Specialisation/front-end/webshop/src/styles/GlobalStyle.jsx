@@ -29,16 +29,6 @@ const  GlobalStyle  =  createGlobalStyle`
         
     }
 
-
-     h4 {
-        ${'' /* text-shadow: 1px 1px #2b2b28; */}
-        color: black;
-
-        
-    }
-
-
-
     a, a:visited, a:active, a:link {
 
         text-decoration: none;

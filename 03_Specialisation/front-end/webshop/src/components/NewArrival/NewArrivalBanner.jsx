@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 export function NewArrivalBanner() {
     return (
+        
         <Container>
             <Link to="/NewArrivals"><HeaderText>New Arrivals</HeaderText></Link>
-            <p>Freshly rolled into our store.</p>
+            <SubHeaderText>Freshly rolled into our store.</SubHeaderText>
         </Container>
         )
 };
@@ -34,7 +35,10 @@ const Container = styled.div`
         scale: 1.05;
   
   }
+`;
+  const SubHeaderText = styled.p`
+   text-shadow: 1px 1px #2b2b28;
+  `;
 
 
-
- `;
+ 

@@ -6,7 +6,7 @@ export function NewsLetter() {
     return (
         <Container>
             <h1>NewsLetter</h1>
-            <p>Sign up for our newsletter here:</p> 
+            <SubHeaderText>Sign up for our newsletter here:</SubHeaderText> 
             <form>
             <input type="email" placeholder="E-mail goes here.." /> <button>Sign up!</button>
             </form>
@@ -33,3 +33,6 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
  ` 
+  const SubHeaderText = styled.p`
+  text-shadow: 1px 1px #2b2b28;
+ `;

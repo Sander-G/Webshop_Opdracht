@@ -25,6 +25,7 @@ export function NewArrivals() {
         <Container>
         <Banner>
         <h1>New Arrivals</h1>
+        <p id="headingP">Freshly rolled into our store.</p>
         </Banner>
         <ProdContainer>
         { isLoading ? ( <p>Loading...</p> ) :
@@ -108,6 +109,7 @@ box-shadow: -5px -5px 10px rgba(255,255,255, 0.5),
  font-size: 2em;
  font-weight: 400;
  text-align: center;
+ color: black;
  `;
 
  const ProdImg = styled.img`
