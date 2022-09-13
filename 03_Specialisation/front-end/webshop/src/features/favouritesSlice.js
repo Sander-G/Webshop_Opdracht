@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createListenerMiddleware, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     favouriteItems: localStorage.getItem("favouriteItems") ?
@@ -10,6 +10,7 @@ const favouritesSlice = createSlice ({
     name: "favourites",
     initialState,
     reducers:{
+
         addToFavourites(state, action){
             const itemIndex = state.favouriteItems.findIndex(
                 (item) => item.id === action.payload.id
@@ -23,8 +24,18 @@ const favouritesSlice = createSlice ({
             }
             localStorage.setItem ("favouriteItems", JSON.stringify (state.favouriteItems));
         },
+
+        removeFromFavourites(state,action){
+            const nextFavouriteItems = state.favouriteItems.filter(
+                favouriteItem => favouriteItem.id !== action.payload.id
+            )
+            state.favouriteItems = nextFavouriteItems;
+            localStorage.setItem("favouriteItems", JSON.stringify(state.favouriteItems))
+
+        }
+
     }
 });
 
-export const { addToFavourites } = favouritesSlice.actions;
+export const { addToFavourites, removeFromFavourites } = favouritesSlice.actions;
 export default favouritesSlice.reducer;

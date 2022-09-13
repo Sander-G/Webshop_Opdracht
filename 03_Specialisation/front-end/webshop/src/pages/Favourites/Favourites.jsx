@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, clearCart, removeFromCart } from "../../features/cartSlice";
+import { removeFromFavourites } from "../../features/favouritesSlice";
 
 
 const FavouriteList = () => {
@@ -14,8 +15,8 @@ const FavouriteList = () => {
     dispatch(getTotals());
   }, [favourites]);
 
-  const handleRemoveFromCart = (cartItem) => {
-    dispatch(removeFromCart(cartItem))
+  const handleRemoveFromFavourites = (favouriteItem) => {
+    dispatch(removeFromFavourites(favouriteItem))
 
   }
   const handleIncreaseCartQty = (cartItem) => {
@@ -54,7 +55,7 @@ const FavouriteList = () => {
                       <ItemTitle>{favouriteItem.title}</ItemTitle>
                       <p>{favouriteItem.desc}</p>
                       <div className="cart__product--Price">€ {favouriteItem.price}</div>
-                      <RemoveButton onClick={() => handleRemoveFromCart(favouriteItem)}>Remove</RemoveButton>
+                      <RemoveButton onClick={() => handleRemoveFromFavourites(favouriteItem)}>Remove</RemoveButton>
                       <RemoveButton onClick={() => handleIncreaseCartQty(favouriteItem)}>Add to Cart</RemoveButton>
                     </div>
                   </CartProduct>
