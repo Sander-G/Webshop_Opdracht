@@ -176,6 +176,7 @@ const CartImage = styled.img`
 
 const ItemTitle = styled.h3`
   font-weight: 400;
+  
 `;
 
 const RemoveButton = styled.button`

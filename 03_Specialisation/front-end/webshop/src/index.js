@@ -10,7 +10,7 @@ import { NewArrivals } from "./pages/ProductPages/NewArrivals"
 import { Vintage } from "./pages/ProductPages/Vintage"
 import { Reissue } from "./pages/ProductPages/Reissue"
 import { Parts } from "./pages/ProductPages/Parts"
-import { Favourites } from "./pages/Favourites/Favourites"
+import  Favourites  from "./pages/Favourites/Favourites"
 import  ShoppingCart from "./pages/ShoppingCart/ShoppingCart"
 import { Login } from "./pages/Login/Login"
 import NotFound from './components/NotFound/NotFound' 

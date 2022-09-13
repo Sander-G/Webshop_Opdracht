@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg"
+import heart from "../../images/heart.svg"
 // import Product from "../../components/Products/Product";
 
 //Router
@@ -33,8 +34,9 @@ export function NewArrivals() {
           ( <>
             {data?.map( (product) => 
             <Product key={product.id} >
-            <Title> {product.title} </Title>
+           <AddToFavourites alt="add to Favourites"/>
             <ProdImg src={product.image} alt={product.name}/>
+            <Title> {product.title} </Title>
               <Details>
                 <span>{product.desc}</span>
                 <Price>€{product.price}</Price>
@@ -97,7 +99,7 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 margin: 1rem auto;
-padding: 1rem;
+padding: 0.5rem;
 border-radius: 5px;
 box-shadow: -5px -5px 10px rgba(255,255,255, 0.5), 
 5px 5px 5px rgba(255,255,255, 0.5), 
@@ -108,8 +110,10 @@ box-shadow: -5px -5px 10px rgba(255,255,255, 0.5),
  const Title = styled.h3`
  font-size: 2em;
  font-weight: 400;
- text-align: center;
+ text-align: left;
  color: black;
+ margin-top: 0.5em;
+ margin-bottom: 0.1em;
  `;
 
  const ProdImg = styled.img`
@@ -122,6 +126,7 @@ box-shadow: -5px -5px 10px rgba(255,255,255, 0.5),
  display: flex;
  justify-content: space-between;
  align-items: center;
+ margin-right: 0.5em;
  `;
 
 const Price = styled.span`
@@ -134,8 +139,8 @@ width: 50%;
 height: 30px;
 align-self: center;
 border-radius: 5px;
-margin-top: 20px;
-margin-bottom: 20px;
+margin-top: 1em;
+margin-bottom: 0.5em;
 font-weight:400px;
 border: none;
 outline: none;
@@ -144,4 +149,17 @@ background: #4b70e2;
 color: white;
 letter-spacing: 1.25px;
 `;
+
+const AddToFavourites = styled.img.attrs({
+  src: `${heart}`
+})`
+height: 2em;
+
+align-self: flex-end;
+cursor: pointer;
+&:hover {
+  transform: scale(1.1);
+}
+
+`
 
