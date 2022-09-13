@@ -3,22 +3,20 @@ import { getTotals } from "../../features/cartSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart, clearCart, decreaseCartQty, removeFromCart } from "../../features/cartSlice";
+import { addToCart, clearCart, removeFromCart } from "../../features/cartSlice";
 
 
-const Favourites = () => {
-  const cart = useSelector((state) => state.cart);
+const FavouriteList = () => {
+  const favourites = useSelector((state) => state.favourites);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTotals());
-  }, [cart]);
+  }, [favourites]);
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem))
-  }
-  const handleDecreaseCartQty = (cartItem) => {
-    dispatch(decreaseCartQty(cartItem))
+
   }
   const handleIncreaseCartQty = (cartItem) => {
     dispatch(addToCart(cartItem))
@@ -34,44 +32,33 @@ const Favourites = () => {
         <Header>Favourites</Header>
 
 
-        {cart.cartItems.length === 0 ? (
-          <EmptyCart>
+        {favourites.favouriteItems.length === 0 ? (
+          <EmptyFavourites>
             <p> Your List is empty</p>
             <StartShopping>
               <Link to="/"><h4>Start Shopping</h4></Link>
             </StartShopping>
-          </EmptyCart>
+          </EmptyFavourites>
 
         ) : (
           <>
-            <Titles>
-              <ProductName>Product</ProductName>
-              <h3 className="price">Price</h3>
-              <h3 className="quantity">Quantity</h3>
-              <Total>Total</Total>
-            </Titles>
+         
 
             <div className="cartItems">
-              {cart.cartItems?.map(cartItem =>
+              {favourites.favouriteItems?.map(favouriteItem =>
               (
-                <CartItem key={cartItem.id}>
+                <CartItem key={favouriteItem.id}>
                   <CartProduct>
-                    <CartImage src={cartItem.image} alt={cartItem.name} />
+                    <CartImage src={favouriteItem.image} alt={favouriteItem.name} />
                     <div>
-                      <ItemTitle>{cartItem.title}</ItemTitle>
-                      <p>{cartItem.desc}</p>
-                      <RemoveButton onClick={() => handleRemoveFromCart(cartItem)}>Remove</RemoveButton>
+                      <ItemTitle>{favouriteItem.title}</ItemTitle>
+                      <p>{favouriteItem.desc}</p>
+                      <div className="cart__product--Price">€ {favouriteItem.price}</div>
+                      <RemoveButton onClick={() => handleRemoveFromCart(favouriteItem)}>Remove</RemoveButton>
+                      <RemoveButton onClick={() => handleIncreaseCartQty(favouriteItem)}>Add to Cart</RemoveButton>
                     </div>
                   </CartProduct>
-                  <div className="cart__product--Price">€ {cartItem.price}</div>
-                  <ProductQuantity>
-                    <QuantityButton onClick={() => handleDecreaseCartQty(cartItem)}>-</QuantityButton>
-                    <ProductCount>{cartItem.cartQuantity}</ProductCount>
-                    <QuantityButton onClick={() => handleIncreaseCartQty(cartItem)}>+</QuantityButton>
-                  </ProductQuantity>
-                  <CartProductTotalPrice>
-                    € {cartItem.price * cartItem.cartQuantity}
-                  </CartProductTotalPrice>
+
                 </CartItem>
 
               ))}
@@ -80,22 +67,10 @@ const Favourites = () => {
             <CartSummary>
               <ClearButton onClick={() => handleClearCart()}>Clear Cart</ClearButton>
 
-              <CartCheckout>
-                <SubTotal>
-                  <span>Subtotal:</span>
-                  <Amount>€ {cart.cartTotalAmount},-</Amount>
-                </SubTotal>
-
-
-
-                <p>Includes VAT, free shipping for all!</p>
-                <CheckOutButton>Check out</CheckOutButton>
-
-
-                <StartShopping>
+          
+              <StartShopping>
                   <Link to="/"><h4>Continue Shopping..</h4></Link>
                 </StartShopping>
-              </CartCheckout>
             </CartSummary>
 
 
@@ -109,7 +84,7 @@ const Favourites = () => {
 
   );
 };
-export default Favourites;
+export default FavouriteList;
 
 
 const Container = styled.div`
@@ -193,15 +168,7 @@ const RemoveButton = styled.button`
   }
 `;
 
-const ProductQuantity = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 120px;
-  max-width: 100%;
-  border: 0.5px solid rgb(178,178,178);
-  border-radius: 5px;
-`;
+
 
 const QuantityButton = styled.button`
   border: none;
@@ -211,9 +178,7 @@ const QuantityButton = styled.button`
   cursor: pointer;
 `;
 
-const ProductCount = styled.div`
-  padding: 0.7rem 0;
-`;
+
 
 const CartProductTotalPrice = styled.div`
   justify-self: right;
@@ -245,38 +210,6 @@ const ClearButton = styled.button`
   }
 `;
 
-const CartCheckout = styled.div`
-width: 270px;
-max-width: 100%;
-`;
-
-const SubTotal = styled.div`
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-`;
-
-const Amount = styled.span`
-  font-weight: 700;
-`;
-
-const CheckOutButton = styled.button`
-  width: 100%;
-  height: 30px;
-  margin-right:1rem;
-  border: 1px solid grey;
-  border-radius: 5px;
-  /* outline: none; */
-  margin-top: 0.7rem;
-  cursor: pointer;
-  background: none;
-  color: black;
-  letter-spacing: 1.15px;
-  &:hover {
-    background-color: lightblue;
-  }
-`;
-
 const StartShopping = styled.div`
   font-size: 14px;
   
@@ -287,7 +220,7 @@ const StartShopping = styled.div`
   };
 `;
 
-const EmptyCart = styled.div`
+const EmptyFavourites = styled.div`
 margin-top: 4rem;
 font-size: 20px;
 color: rgb(84,84,84);

@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { useGetAllProductsQuery } from "../../features/productsAPI"
 import { addToCart } from "../../features/cartSlice";
+import { addToFavourites } from "../../features/favouritesSlice"
 
 
 
@@ -21,6 +22,9 @@ export function NewArrivals() {
     dispatch(addToCart(product));
     navigate("/ShoppingCart");
   };
+  const handleAddToFavourites = (product) => {
+    dispatch(addToFavourites(product));
+  }
 
   return (
         <Container>
@@ -34,7 +38,7 @@ export function NewArrivals() {
           ( <>
             {data?.map( (product) => 
             <Product key={product.id} >
-           <AddToFavourites alt="add to Favourites"/>
+           <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)}/>
             <ProdImg src={product.image} alt={product.name}/>
             <Title> {product.title} </Title>
               <Details>
