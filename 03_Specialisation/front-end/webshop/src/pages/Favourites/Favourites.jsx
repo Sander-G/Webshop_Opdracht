@@ -3,8 +3,8 @@ import { getTotals } from "../../features/cartSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart, clearCart, removeFromCart } from "../../features/cartSlice";
-import { removeFromFavourites } from "../../features/favouritesSlice";
+import { addToCart } from "../../features/cartSlice";
+import { clearFavourites, removeFromFavourites } from "../../features/favouritesSlice";
 
 
 const FavouriteList = () => {
@@ -19,11 +19,11 @@ const FavouriteList = () => {
     dispatch(removeFromFavourites(favouriteItem))
 
   }
-  const handleIncreaseCartQty = (cartItem) => {
-    dispatch(addToCart(cartItem))
+  const handleIncreaseCartQty = (favouriteItem) => {
+    dispatch(addToCart(favouriteItem))
   }
-  const handleClearCart = () => {
-    dispatch(clearCart());
+  const handleClearFavourites = () => {
+    dispatch(clearFavourites());
   }
 
 
@@ -45,34 +45,34 @@ const FavouriteList = () => {
           <>
          
 
-            <div className="cartItems">
+            <div className="FavouriteItems">
               {favourites.favouriteItems?.map(favouriteItem =>
               (
-                <CartItem key={favouriteItem.id}>
-                  <CartProduct>
-                    <CartImage src={favouriteItem.image} alt={favouriteItem.name} />
+                <FavouriteItem key={favouriteItem.id}>
+                  <FavouriteProduct>
+                    <FavouriteImage src={favouriteItem.image} alt={favouriteItem.name} />
                     <div>
                       <ItemTitle>{favouriteItem.title}</ItemTitle>
                       <p>{favouriteItem.desc}</p>
-                      <div className="cart__product--Price">€ {favouriteItem.price}</div>
-                      <RemoveButton onClick={() => handleRemoveFromFavourites(favouriteItem)}>Remove</RemoveButton>
-                      <RemoveButton onClick={() => handleIncreaseCartQty(favouriteItem)}>Add to Cart</RemoveButton>
+                      <div className="Price">€ {favouriteItem.price}</div>
+                      <Button onClick={() => handleRemoveFromFavourites(favouriteItem)}>Remove</Button>
+                      <Button onClick={() => handleIncreaseCartQty(favouriteItem)}>Add to Cart</Button>
                     </div>
-                  </CartProduct>
+                  </FavouriteProduct>
 
-                </CartItem>
+                </FavouriteItem>
 
               ))}
             </div>
 
-            <CartSummary>
-              <ClearButton onClick={() => handleClearCart()}>Clear Cart</ClearButton>
+            <BottomDiv>
+              <ClearButton onClick={() => handleClearFavourites()}>Clear Favourites</ClearButton>
 
           
               <StartShopping>
                   <Link to="/"><h4>Continue Shopping..</h4></Link>
                 </StartShopping>
-            </CartSummary>
+            </BottomDiv>
 
 
 
@@ -106,47 +106,26 @@ text-align: center;
 color: black; 
 `;
 
-const Titles = styled.div`
-  margin: 1rem 0 1rem 0;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
-  column-gap: 0.5rem;
-  text-transform: uppercase;
-  
-  & h3 {   font-size: 14px;
-    color: black;
-  font-weight: 400;
-}
- `;
 
-const CartItem = styled.div`
+const FavouriteItem = styled.div`
+  width: 90vw;
   display: grid;
-  align-items: center;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  grid-template-columns: fr 2fr 2fr;
   column-gap: 0.5rem;
   border-top: 1px solid rgb(178, 178, 178);
   padding: 0.5rem 0;
  `
 
-const ProductName = styled.h3`
-  padding-left: 0.5rem;
- `;
-
-const Total = styled.h3`
-padding-right: 0.5rem;
-justify-self: right ;
-
-`;
-
-const CartProduct = styled.div`
+const FavouriteProduct = styled.div`
   display: flex;
 `;
 
-const CartImage = styled.img`
+const FavouriteImage = styled.img`
   width: 150px;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 100vh;
   margin-right: 1rem;
 `;
 
@@ -154,12 +133,12 @@ const ItemTitle = styled.h3`
   font-weight: 400;
   
 `;
-
-const RemoveButton = styled.button`
+const Button = styled.button`
   border: 1px solid grey;
   border-radius: 5px;
   /* outline: none; */
   margin-top: 0.7rem;
+  margin-right: 0.7rem;
   cursor: pointer;
   background: none;
   color: black;
@@ -171,23 +150,13 @@ const RemoveButton = styled.button`
 
 
 
-const QuantityButton = styled.button`
-  border: none;
-  outline: none;
-  background: none;
-  padding: 0.7rem 1.5rem;
-  cursor: pointer;
-`;
 
 
 
-const CartProductTotalPrice = styled.div`
-  justify-self: right;
-  padding-right: 0.5rem;
-  font-weight: 800;
-`;
 
-const CartSummary = styled.div`
+
+
+const BottomDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -206,8 +175,10 @@ const ClearButton = styled.button`
   background: none;
   color: black;
   letter-spacing: 1.15px;
+  margin-bottom: 4rem;
   &:hover {
     background-color: lightblue;
+   
   }
 `;
 

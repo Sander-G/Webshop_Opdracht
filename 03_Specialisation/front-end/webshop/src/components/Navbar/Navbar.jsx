@@ -4,6 +4,7 @@ import Badge from "@material-ui/core/Badge";
 // Functioneel
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useQuantity } from "../../utils/useQuantity";
 // Images
 import CartSrc from "./../../images/skateCart.png";
 import HeartSrc from "./../../images/skateHeart.png";
@@ -12,7 +13,10 @@ import LogoSrc from "./../../images/skippy.png";
 import LoginSrc from "./../../images/loginIcon.png";
 
 export function Navbar() {
-    const {cartTotalQuantity} = useSelector(state => state.cart)
+    const { total, quantity } = useQuantity();
+    
+    console.log(total)
+    console.log(quantity)
   return (
     <Container>
       <Link to="/"><Logo/></Link>
@@ -24,7 +28,7 @@ export function Navbar() {
             <Favourites />
             </Link>
           </Badge>
-          <Badge color="secondary" overlap="circular" badgeContent={cartTotalQuantity} >
+          <Badge color="secondary" overlap="circular" badgeContent={total} >
             <Link to="/ShoppingCart">
             <Cart />
             </Link>
