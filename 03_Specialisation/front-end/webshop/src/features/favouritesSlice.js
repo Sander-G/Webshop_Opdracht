@@ -4,12 +4,12 @@ const initialState = {
     favouriteItems: localStorage.getItem("favouriteItems") ?
     JSON.parse(localStorage.getItem("favouriteItems")) : [],
     favouritesTotalQuantity: 0,
-}
+};
 
 const favouritesSlice = createSlice ({
     name: "favourites",
     initialState,
-    reducers:{
+    reducers: {
         addToFavourites(state, action){
             const itemIndex = state.favouriteItems.findIndex(
                 (item) => item.id === action.payload.id
@@ -37,8 +37,10 @@ const favouritesSlice = createSlice ({
         clearFavourites(state, action){
             state.favouriteItems = []
         },
-
         // get total favourites
+
+        
+      
 
     }
     

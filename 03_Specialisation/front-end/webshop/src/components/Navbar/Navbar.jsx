@@ -13,7 +13,6 @@ import LoginSrc from "./../../images/loginIcon.png";
 
 export function Navbar() {
   const { total, } = useCartQuantity();
-
   console.log(total)
 
   return (
