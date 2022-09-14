@@ -2,6 +2,8 @@
 import { auth } from "../../utils/firebase"
 import { createUserWithEmailAndPassword } from "../../utils/firebase/auth"
 
+function Register () {
+
 // wachtwoord validatie
 const validatePassword = () => {
     let isValid = true
@@ -31,21 +33,21 @@ const register = e => {
 };
 
 return (
+
     <>
         <h1> Register </h1>
-            <form onSubmit={register} name="registrationForm">
+            <form onSubmit={register} name="registration_form">
                 <input type="email" value={email} placeholder="Enter your Email"
                     onChange={e => setEmail(e.target.value)} required />
                 <input type="password" value={password} placeholder="Enter your Password"
                     onChange={e => setPassword(e.target.value)} required />
                 <button type="submit">Register!</button>
             </form>
-            
-        <span> Already registered?
-        <Link to="../../pages/Login/Login">Login!</Link>
-        </span>
+                <span> Already registered?
+                    <Link to="../Login/Login.jsx">Login!</Link>
+                </span>
     </>
-
 )
 
-export default register;
+}
+export default Register;

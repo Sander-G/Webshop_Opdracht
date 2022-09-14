@@ -1,7 +1,12 @@
 import styled from "styled-components"
 
-export function Login() {
-    return (
+import {auth} from '../../utils/firebase'
+
+ function Login() {
+    
+  
+  
+  return (
         <Container>
         <Wrapper>
         <h1>Login</h1>
@@ -9,6 +14,8 @@ export function Login() {
         </Container>
         )
 };
+
+export default Login
 
 
 const Container = styled.div`

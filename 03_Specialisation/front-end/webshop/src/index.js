@@ -12,8 +12,12 @@ import { Reissue } from "./pages/ProductPages/Reissue";
 import { Parts } from "./pages/ProductPages/Parts";
 import Favourites from "./pages/Favourites/Favourites";
 import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
-import { Login } from "./pages/Login/Login";
+import  Login from "./pages/Login/Login";
+import  Register  from "./pages/Login/Register"
+
+
 import NotFound from "./components/NotFound/NotFound"; 
+
 
 // Redux
 import { productsApi } from "./features/productsAPI";
@@ -55,6 +59,7 @@ root.render(
           <Route path= "/Favourites" element={<Favourites />} />
           <Route path= "/ShoppingCart" element={<ShoppingCart />} />
           <Route path= "/Login" element={<Login />} /> 
+          <Route path= "/Register" element={<Register />} />
           <Route path= "/NotFound" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
           </Route>
