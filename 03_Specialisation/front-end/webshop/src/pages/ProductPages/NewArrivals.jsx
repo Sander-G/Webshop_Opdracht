@@ -1,7 +1,7 @@
+// Styling & Images
 import styled from "styled-components"
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg"
 import heart from "../../images/heart.svg"
-// import Product from "../../components/Products/Product";
 
 //Router
 import { useNavigate } from "react-router-dom"
@@ -14,8 +14,8 @@ import { addToFavourites } from "../../features/favouritesSlice"
 
 
 export function NewArrivals() {
-  const {data, error, isLoading} = useGetAllProductsQuery();
-  const dispatch = useDispatch();  
+  const { data, error, isLoading } = useGetAllProductsQuery();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
@@ -27,34 +27,34 @@ export function NewArrivals() {
   }
 
   return (
-        <Container>
-        <Banner>
+    <Container>
+      <Banner>
         <h1>New Arrivals</h1>
         <p id="headingP">Freshly rolled into our store.</p>
-        </Banner>
-        <ProdContainer>
-        { isLoading ? ( <p>Loading...</p> ) :
-         error ? ( <p>An error occured..</p> ) :
-          ( <>
-            {data?.map( (product) => 
-            <Product key={product.id} >
-           <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)}/>
-            <ProdImg src={product.image} alt={product.name}/>
-            <Title> {product.title} </Title>
-              <Details>
-                <span>{product.desc}</span>
-                <Price>€{product.price}</Price>
-              </Details>
-                <Button onClick= {() => handleAddToCart(product)}>Add to Cart</Button>
-            </Product>)}
-        </>
-        )}
+      </Banner>
+      <ProdContainer>
+        {isLoading ? (<p>Loading...</p>) :
+          error ? (<p>An error occured..</p>) :
+            (<>
+              {data?.map((product) =>
+                <Product key={product.id} >
+                  <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)} />
+                  <ProdImg src={product.image} alt={product.name} />
+                  <Title> {product.title} </Title>
+                  <Details>
+                    <span>{product.desc}</span>
+                    <Price>€{product.price}</Price>
+                  </Details>
+                  <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+                </Product>)}
+            </>
+            )}
 
 
-        </ProdContainer>
-     
-        </Container>
-        )
+      </ProdContainer>
+
+    </Container>
+  )
 };
 
 
@@ -87,7 +87,7 @@ const Banner = styled.div`
   flex-direction: column;  
  `;
 
- const ProdContainer = styled.div`
+const ProdContainer = styled.div`
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap; 
@@ -111,7 +111,7 @@ box-shadow: -5px -5px 10px rgba(255,255,255, 0.5),
 -2px -2px 5px rgba(94, 104, 121, 0.3);
 `;
 
- const Title = styled.h3`
+const Title = styled.h3`
  font-size: 2em;
  font-weight: 400;
  text-align: left;
@@ -120,13 +120,13 @@ box-shadow: -5px -5px 10px rgba(255,255,255, 0.5),
  margin-bottom: 0.1em;
  `;
 
- const ProdImg = styled.img`
+const ProdImg = styled.img`
  width: 80%;
  margin-left: auto;
  margin-right: auto;
  `;
 
- const Details = styled.div`
+const Details = styled.div`
  display: flex;
  justify-content: space-between;
  align-items: center;

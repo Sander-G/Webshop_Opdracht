@@ -3,8 +3,7 @@ import styled from "styled-components";
 import Badge from "@material-ui/core/Badge";
 // Functioneel
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useQuantity } from "../../utils/useQuantity";
+import { useCartQuantity } from "../../utils/useCartQuantity";
 // Images
 import CartSrc from "./../../images/skateCart.png";
 import HeartSrc from "./../../images/skateHeart.png";
@@ -13,29 +12,29 @@ import LogoSrc from "./../../images/skippy.png";
 import LoginSrc from "./../../images/loginIcon.png";
 
 export function Navbar() {
-    const { total, quantity } = useQuantity();
-    
-    console.log(total)
-    console.log(quantity)
+  const { total, } = useCartQuantity();
+
+  console.log(total)
+
   return (
     <Container>
-      <Link to="/"><Logo/></Link>
-      <Link to="/"><Banner/></Link>
-      
+      <Link to="/"><Logo /></Link>
+      <Link to="/"><Banner /></Link>
+
       <NavItems>
-          <Badge color="secondary" overlap="circular" badgeContent={1} >
-            <Link to="/Favourites">
+        <Badge color="secondary" overlap="circular" badgeContent={1} >
+          <Link to="/Favourites">
             <Favourites />
-            </Link>
-          </Badge>
-          <Badge color="secondary" overlap="circular" badgeContent={total} >
-            <Link to="/ShoppingCart">
+          </Link>
+        </Badge>
+        <Badge color="secondary" overlap="circular" badgeContent={total} >
+          <Link to="/ShoppingCart">
             <Cart />
-            </Link>
-          </Badge>
-            <Link to="/Login">
-            <Login />
-            </Link>
+          </Link>
+        </Badge>
+        <Link to="/Login">
+          <Login />
+        </Link>
       </NavItems>
     </Container>
   )
