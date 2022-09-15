@@ -12,12 +12,7 @@ import { Reissue } from "./pages/ProductPages/Reissue";
 import { Parts } from "./pages/ProductPages/Parts";
 import Favourites from "./pages/Favourites/Favourites";
 import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
-import  Login from "./pages/Login/Login";
-import  Register  from "./pages/Login/Register"
-
-
 import NotFound from "./components/NotFound/NotFound"; 
-
 
 // Redux
 import { productsApi } from "./features/productsAPI";
@@ -25,7 +20,9 @@ import ProductsReducer, { productsFetch } from "./features/productSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import cartReducer, { getTotals } from "./features/cartSlice";
-import favouritesReducer from "./features/favouritesSlice"
+import favouritesReducer from "./features/favouritesSlice";
+
+
 
 
 const store = configureStore({
@@ -58,8 +55,6 @@ root.render(
           <Route path= "/Parts" element={<Parts />} />
           <Route path= "/Favourites" element={<Favourites />} />
           <Route path= "/ShoppingCart" element={<ShoppingCart />} />
-          <Route path= "/Login" element={<Login />} /> 
-          <Route path= "/Register" element={<Register />} />
           <Route path= "/NotFound" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
           </Route>

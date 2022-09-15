@@ -56,7 +56,7 @@ const ShoppingCart = () => {
               (
                 <CartItem key={cartItem.id}>
                   <CartProduct>
-                    <CartImage src={cartItem.image} alt={cartItem.name} />
+                    <CartImage src={cartItem.image} alt={cartItem.title} />
                     <div>
                       <ItemTitle>{cartItem.title}</ItemTitle>
                       <p>{cartItem.desc}</p>
