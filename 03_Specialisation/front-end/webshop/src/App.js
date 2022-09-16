@@ -13,7 +13,11 @@ function App() {
   return (
     <>
     <GlobalStyle />
-    <ToastContainer />
+    <ToastContainer 
+      position="top-right"
+      autoClose="2500"
+      hideProgressBar="true"           
+    />
       <Navbar />
       <Outlet />
       <Footer />
