@@ -21,7 +21,7 @@ export function Navbar() {
       <Link to="/"><Banner /></Link>
 
       <NavItems>
-        <Badge color="secondary" overlap="circular" badgeContent={1} >
+        <Badge color="secondary" overlap="circular" badgeContent={0} >
           <Link to="/Favourites">
             <Favourites />
           </Link>
