@@ -35,6 +35,7 @@ export function Vintage() {
           error ? (<p>An error occured..</p>) :
             (<>
               {data?.map((product) =>
+                product.category === "Vintage" ?
                 <Product key={product.id} >
                   <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)} />
                   <ProdImg src={product.image} alt={product.name} />
@@ -44,7 +45,9 @@ export function Vintage() {
                     <Price>€{product.price}</Price>
                   </Details>
                   <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
-                </Product>)}
+                </Product>
+                : <></>
+                )}
             </>
             )}
 
