@@ -32,11 +32,11 @@ const Container = styled.footer`
   border-top: 1px solid black;
 `;
 const Socials = styled.div`
-padding-left: 3.5rem;
+padding-left: 3rem;
 `
 
 const Copyright = styled.div`
-padding-right: 3.5rem;
+padding-right: 3rem;
 `;
 
 const Facebook = styled.img.attrs({
