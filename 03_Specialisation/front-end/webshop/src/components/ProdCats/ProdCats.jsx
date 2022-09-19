@@ -20,7 +20,7 @@ export function ProdCats() {
           <Link to="/Vintage"><HeaderText>Vintage</HeaderText></Link>
           </Vintage>
           <Reissue>
-          <Link to="/Reissue"><HeaderText>New / Reissue</HeaderText></Link>
+          <Link to="/Reissue"><HeaderText>New&nbsp;/&nbsp;Reissue</HeaderText></Link>
           </Reissue>
           <Parts>
           <Link to="/Parts"><HeaderText>Parts</HeaderText></Link>
