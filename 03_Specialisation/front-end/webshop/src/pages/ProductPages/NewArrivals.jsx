@@ -30,7 +30,7 @@ export function NewArrivals() {
     <Container>
       <Banner>
         <h1>New Arrivals</h1>
-        <p id="headingP">Freshly rolled into our store.</p>
+        <SubHeaderText>Freshly rolled into our store.</SubHeaderText>
       </Banner>
       <ProdContainer>
         {isLoading ? (<p>Loading...</p>) :
@@ -86,6 +86,10 @@ const Banner = styled.div`
   justify-content: center;
   flex-direction: column;  
  `;
+
+const SubHeaderText = styled.p`
+text-shadow: 1px 1px #2b2b28;
+`;
 
 const ProdContainer = styled.div`
 display: flex;
@@ -158,12 +162,10 @@ const AddToFavourites = styled.img.attrs({
   src: `${heart}`
 })`
 height: 2em;
-
 align-self: flex-end;
 cursor: pointer;
 &:hover {
   transform: scale(1.1);
 }
-
-`
+`;
 
