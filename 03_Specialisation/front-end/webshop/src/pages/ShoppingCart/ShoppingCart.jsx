@@ -70,7 +70,7 @@ const ShoppingCart = () => {
                     <QuantityButton onClick={() => handleIncreaseCartQty(cartItem)}>+</QuantityButton>
                   </ProductQuantity>
                   <CartProductTotalPrice>
-                    € {cartItem.price * cartItem.cartQuantity}
+                    € {(cartItem.price * cartItem.cartQuantity).toFixed(2)}
                   </CartProductTotalPrice>
                 </CartItem>
 
@@ -83,7 +83,9 @@ const ShoppingCart = () => {
               <CartCheckout>
                 <SubTotal>
                   <span>Subtotal:</span>
-                  <Amount>€ {cart.cartTotalAmount} ,-</Amount>
+                  <Amount>€ {(cart.cartTotalAmount).toFixed(2)},-</Amount>
+
+         
                 </SubTotal>
 
 
