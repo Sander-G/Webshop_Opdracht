@@ -83,7 +83,7 @@ const ShoppingCart = () => {
               <CartCheckout>
                 <SubTotal>
                   <span>Subtotal:</span>
-                  <Amount>€ {cart.cartTotalAmount},-</Amount>
+                  <Amount>€ {cart.cartTotalAmount} ,-</Amount>
                 </SubTotal>
 
 

@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 // Pagina's
 import Home from "./pages/Home/Home";
 import { NewArrivals } from "./pages/ProductPages/NewArrivals";
@@ -13,6 +12,8 @@ import Favourites from "./pages/Favourites/Favourites";
 import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
 import NotFound from "./components/NotFound/NotFound";
 import { NewsLetter } from "./components/NewsLetter/NewsLetter";
+// import { Login } from "./pages/Login/Login";
+
 
 // Redux
 import { productsApi } from "./features/productsAPI";
