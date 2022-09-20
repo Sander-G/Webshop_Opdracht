@@ -10,10 +10,11 @@ export function NewsLetter() {
             <SubHeaderText>Sign up for our newsletter here:</SubHeaderText>
             <form>
                 <input type="email" placeholder="E-mail goes here.." required />
+                
                 <button onClick={() =>
-                    toast.info("You have signed up for our newsletter!")}>Sign up!
-                </button>
-            </form>
+                toast.info("You have signed up for our newsletter!")}>
+                Sign up!</button>
+                 </form>
         </Container>
     )
 };
