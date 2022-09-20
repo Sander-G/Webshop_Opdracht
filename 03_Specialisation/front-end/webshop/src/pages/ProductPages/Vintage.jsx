@@ -2,9 +2,8 @@ import styled from "styled-components"
 import backgroundSrc from "./../../images/vintageCatWide.jpg"
 import heart from "../../images/heart.svg"
 
-//Router
 import { useNavigate, Link } from "react-router-dom"
-// Redux
+
 import { useDispatch } from "react-redux"
 import { useGetAllProductsQuery } from "../../features/productsAPI"
 import { addToCart } from "../../features/cartSlice";
@@ -21,50 +20,44 @@ export function Vintage() {
   };
   const handleAddToFavourites = (product) => {
     dispatch(addToFavourites(product));
-  }
-   
+  };
+
   return (
-        <Container>
-       
-        <Banner>
-          <h1> Vintage Skateboards </h1>
-          <SubHeaderText>Classic collecters items.</SubHeaderText>
-        </Banner>
-        <ProdContainer>
+    <Container>
+      <Banner>
+        <h1> Vintage Skateboards </h1>
+        <SubHeaderText>Classic collecters items.</SubHeaderText>
+      </Banner>
+      <ProdContainer>
         {isLoading ? (<p>Loading...</p>) :
           error ? (<p>An error occured..</p>) :
             (<>
-              {data?.map((product) =>
+              {data?.map((product) => 
                 product.category === "Vintage" ?
-                <Product key={product.id} >
-                  <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)} />
-                  <ProdImg src={product.image} alt={product.name} />
-                  <Title> {product.title} </Title>
-                  <Details>
-                    <span>{product.desc}</span>
-                    <Price>€{product.price}</Price>
-                  </Details>
-                  <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
-                </Product>
-                : <></>
-                )}
+                  <Product key={product.id} >
+                    <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)} />
+                    <ProdImg src={product.image} alt={product.name} />
+                    <Title> {product.title} </Title>
+                    <Details>
+                      <span>{product.desc}</span>
+                      <Price>€{product.price}</Price>
+                    </Details>
+                    <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+                  </Product>
+                  : <></>)
+              };
             </>
-            )}
-
-
+            )
+        };
       </ProdContainer>
-
       <StartShopping>
-                  <Link to="/"><h4>Back to main..</h4></Link>
-                </StartShopping>
-
- 
-
-        </Container>
-        )
+        <Link to="/"><h4>Back to main..</h4></Link>
+      </StartShopping>
+    </Container>
+  );
 };
 
-
+//Styled Components
 const Container = styled.div`
   width: 100%;
   padding-top: 7rem;

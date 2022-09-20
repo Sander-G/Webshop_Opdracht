@@ -2,15 +2,12 @@ import styled from "styled-components"
 import backgroundSrc from "../../images/reissueCatWide.jpg"
 import heart from "../../images/heart.svg"
 
-//Router
 import { useNavigate, Link } from "react-router-dom"
-// Redux
+
 import { useDispatch } from "react-redux"
 import { useGetAllProductsQuery } from "../../features/productsAPI"
 import { addToCart } from "../../features/cartSlice";
 import { addToFavourites } from "../../features/favouritesSlice"
-
-
 
 
 export function Reissue() {
@@ -24,7 +21,7 @@ export function Reissue() {
   };
   const handleAddToFavourites = (product) => {
     dispatch(addToFavourites(product));
-  }
+  };
 
     return (
         <Container>
@@ -38,34 +35,30 @@ export function Reissue() {
             (<>
               {data?.map((product) =>
                 product.category === "Reissue" ?
-                <Product key={product.id} >
-                  <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)} />
-                  <ProdImg src={product.image} alt={product.name} />
-                  <Title> {product.title} </Title>
-                  <Details>
-                    <span>{product.desc}</span>
-                    <Price>€{product.price}</Price>
-                  </Details>
-                  <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
-                </Product>
-                : <></>)}
+                  <Product key={product.id} >
+                    <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)} />
+                    <ProdImg src={product.image} alt={product.name} />
+                    <Title> {product.title} </Title>
+                    <Details>
+                      <span>{product.desc}</span>
+                      <Price>€{product.price}</Price>
+                    </Details>
+                    <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+                  </Product>
+                : <></>)
+              };
             </>
-            )}
-
-
-      </ProdContainer>
-      <StartShopping>
-                  <Link to="/"><h4>Back to main..</h4></Link>
-                </StartShopping>
-
- 
-
-
+            )
+        };
+        </ProdContainer>
+        <StartShopping>
+          <Link to="/"><h4>Back to main..</h4></Link>
+        </StartShopping>
         </Container>
-        )
+    );
 };
 
-
+//Styled Components
 const Container = styled.div`
   width: 100%;
   padding-top: 7rem;
@@ -100,7 +93,6 @@ const Banner = styled.div`
 const SubHeaderText = styled.p`
 text-shadow: 1px 1px #2b2b28;
 `;
-
 
 const ProdContainer = styled.div`
 display: flex;
