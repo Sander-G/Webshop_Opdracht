@@ -3,7 +3,7 @@ import backgroundSrc from "./../../images/vintageCatWide.jpg"
 import heart from "../../images/heart.svg"
 
 //Router
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 // Redux
 import { useDispatch } from "react-redux"
 import { useGetAllProductsQuery } from "../../features/productsAPI"
@@ -54,6 +54,9 @@ export function Vintage() {
 
       </ProdContainer>
 
+      <StartShopping>
+                  <Link to="/"><h4>Back to main..</h4></Link>
+                </StartShopping>
 
  
 
@@ -171,5 +174,15 @@ cursor: pointer;
 &:hover {
   transform: scale(1.1);
 }
+`;
+
+const StartShopping = styled.div`
+  font-size: 14px;
+  
+  font-weight: 600;
+  & h4 {
+    color: #d7732b;
+    text-shadow: none;
+  };
 `;
 

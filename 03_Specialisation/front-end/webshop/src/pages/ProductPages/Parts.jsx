@@ -2,7 +2,7 @@ import styled from "styled-components"
 import backgroundSrc from "../../images/partsCatWide.png"
 import heart from "../../images/heart.svg"
 
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 // Redux
 import { useDispatch } from "react-redux"
@@ -52,7 +52,9 @@ export function Parts() {
             )}
 
         </ProdContainer>
-
+        <StartShopping>
+                  <Link to="/"><h4>Back to main..</h4></Link>
+                </StartShopping>
 
         </Container>
         )
@@ -168,6 +170,16 @@ cursor: pointer;
 background: #4b70e2;
 color: white;
 letter-spacing: 1.25px;
+`;
+
+const StartShopping = styled.div`
+  font-size: 14px;
+  
+  font-weight: 600;
+  & h4 {
+    color: #d7732b;
+    text-shadow: none;
+  };
 `;
 
 
