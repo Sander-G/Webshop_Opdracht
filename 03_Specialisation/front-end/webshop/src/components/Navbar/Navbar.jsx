@@ -1,10 +1,10 @@
-// Styling
 import styled from "styled-components";
 import Badge from "@material-ui/core/Badge";
-// Functioneel
+
 import { Link } from "react-router-dom";
 import { useCartQuantity } from "../../utils/useCartQuantity";
-// Images
+
+ 
 import CartSrc from "./../../images/skateCart.png";
 import HeartSrc from "./../../images/skateHeart.png";
 import BannerSrc from "./../../images/Banner.png";
@@ -12,8 +12,10 @@ import LogoSrc from "./../../images/skippy.png";
 import LoginSrc from "./../../images/loginIcon.png";
 
 export function Navbar() {
-  const { total, } = useCartQuantity();
-  console.log(total)
+    const { total } = useCartQuantity();
+
+
+ 
 
   return (
     <Container>
@@ -34,6 +36,7 @@ export function Navbar() {
         <Link to="/Login">
           <Login />
         </Link>
+      
       </NavItems>
     </Container>
   )

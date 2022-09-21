@@ -1,15 +1,20 @@
-//Styling
+
 import GlobalStyle from "./styles/GlobalStyle";
-//Router
+
 import { Outlet } from "react-router-dom";
-// Pages
+
 import { Navbar } from "./components/Navbar/Navbar";
 import { Footer } from "./components/Footer/Footer";
-// Tostify
+import { useState } from "react"
 import { ToastContainer } from "react-toastify";
+import  Login  from "./components/Login/Login.jsx"
+import  Register  from "./components/Register/Register.jsx"
+ 
 import "react-toastify/dist/ReactToastify.css";
 
+
 function App() {
+  const [isLoggedIn, setLoggedIn] = useState(false);
   return (
     <>
       <GlobalStyle />
@@ -20,7 +25,11 @@ function App() {
       />
       <Navbar />
       <Outlet />
+      {isLoggedIn && <h1>Logged in!</h1>}
       <Footer />
+      <Login setLoggedIn={setLoggedIn}/>
+      <Register setLoggedIn={setLoggedIn}/>
+     
     </>
   );
 }

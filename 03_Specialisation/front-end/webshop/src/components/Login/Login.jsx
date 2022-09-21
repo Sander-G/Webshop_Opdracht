@@ -1,11 +1,11 @@
 import { React, useState } from 'react';
 import styled from 'styled-components';
-import {app } from '../../utils/firebase';
+import { app } from '../../utils/firebase';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth(app);
 
-export default function Login() {
+export default function Login({ setLoggedIn }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -15,20 +15,18 @@ export default function Login() {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
+           
                 const user = userCredential.user;
                 setEmail('');
                 setPassword('');
-                // reset inputs
-
+                // = reset inputs
                 console.log(user);
-                console.log(userCredential) 
-         
+                console.log(userCredential);
+                setLoggedIn(true);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-
                 console.log(error)
             });
     }
@@ -36,8 +34,12 @@ export default function Login() {
         <Container>
             <form onSubmit={handleLogin}>
                 <h3>Login here:</h3>
-                <input type="email" name="email" placeholder="Your Password" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <input type="password" name="password" placeholder="Your Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type="email" name="email" placeholder="Your Email" 
+                id="email" autoComplete="username" 
+                value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <input type="password" name="password" placeholder="Your Password"
+                id="password" autoComplete="current-password" 
+                value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <button type="submit">Login!</button>
 
             </form>

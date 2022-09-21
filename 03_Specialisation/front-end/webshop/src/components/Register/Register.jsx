@@ -6,7 +6,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth(app);
 
-export default function Register() {
+export default function Register ({ setLoggedIn }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const handleRegister = (e) => {
@@ -15,19 +15,19 @@ export default function Register() {
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
+              
                 const user = userCredential.user;
                 setEmail('');
                 setPassword('');
-                      // reset inputs
-
+                // reset inputs
                 console.log(user);
-                console.log(userCredential) 
+                console.log(userCredential);
+                setLoggedIn(true); 
+
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                
                 console.log(error)
             });
 
@@ -36,8 +36,8 @@ export default function Register() {
         <Container>
             <form onSubmit={handleRegister}>
                 <h3>Register here:</h3>
-                <input type="email" name="email" placeholder="Your Email" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <input type="password" name="password" placeholder="Your Password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type="email" name="email" placeholder="Your Email" id="email" autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input type="password" name="password" placeholder="Your Password" id="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <button type="submit">Register!</button>
             </form>
         </Container>

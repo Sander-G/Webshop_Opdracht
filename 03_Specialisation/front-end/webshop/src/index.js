@@ -25,6 +25,7 @@ import { Provider } from "react-redux";
 import cartReducer, { getTotals } from "./features/cartSlice";
 import favouritesReducer from "./features/favouritesSlice";
 
+
 const store = configureStore({
   reducer: {
     products: ProductsReducer,
