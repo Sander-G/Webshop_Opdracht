@@ -48,8 +48,7 @@ export function NewArrivals() {
                   </Product>
                   : <></>)
               };
-            </>
-            )
+          </>)
         };
       </ProdContainer>
       <StartShopping>
@@ -112,8 +111,9 @@ const Product = styled.div`
   padding: 0.5rem;
   border-radius: 5px;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
-    5px 5px 5px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(94, 104, 121, 0.3),
-    -2px -2px 5px rgba(94, 104, 121, 0.3);
+              5px 5px 5px rgba(255, 255, 255, 0.5), 
+              2px 2px 5px rgba(94, 104, 121, 0.3),
+              -2px -2px 5px rgba(94, 104, 121, 0.3);
 `;
 
 const Title = styled.h3`
@@ -172,7 +172,6 @@ const AddToFavourites = styled.img.attrs({
 
 const StartShopping = styled.div`
   font-size: 14px;
-  
   font-weight: 600;
   & h4 {
     color: #d7732b;

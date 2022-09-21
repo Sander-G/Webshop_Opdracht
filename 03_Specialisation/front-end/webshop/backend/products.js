@@ -179,7 +179,7 @@ const products = [
   },
   {
     id: "23",
-    title: "Primitive Ribeiro Mystic Skateboard Deck Multi 8.0",
+    title: "Tired Seats - Blank Skateboard Deck 8.0",
     desc: "including free Griptape Sheet!",
     category: "NewArrival",
     price: "76.95",
@@ -187,7 +187,7 @@ const products = [
   },
   {
     id: "24",
-    title: "Tired Seats Skateboard Deck 8.0",
+    title: "Primitive Ribeiro Mystic Deck Multi 8.0",
     desc: "including free Griptape Sheet!",
     category: "NewArrival",
     price: "79.95",
@@ -242,11 +242,6 @@ const products = [
     price: "473.95",
     image: "https://res.cloudinary.com/ordinator/image/upload/c_scale,w_250/v1663664568/SkippySkateboards/30_n6dh5b.jpg",
   },
-
-
-
-
-
 ];
 
 module.exports = products;
