@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { createNewAccount, loginToAccount } from '../../../utils/firebase';
 
+
 export function SignIn({ setShowSignUp }) {
     const [details, setDetails] = React.useState({
         email: '',
@@ -16,7 +17,7 @@ export function SignIn({ setShowSignUp }) {
     return (
         <Form onSubmit={handleSignIn}>
             <FormHeader>
-                Sign up!
+            Sign in here!
             </FormHeader>
             <FormWrapper>
                 <Input onChange={(e) => setDetails(details => {
@@ -33,8 +34,8 @@ export function SignIn({ setShowSignUp }) {
                 })} value={details.password} type="password" placeholder="Password" />
             </FormWrapper>
             <FormWrapper>
-                <button type="submit">Sign in</button>
-                <span onClick={() => setShowSignUp(prevState => !prevState)}>Click here to Sign Up</span>
+                <ModalButton type="submit">Sign in</ModalButton>
+                <SwitchSignInUp onClick={() => setShowSignUp(prevState => !prevState)}>Click here to Sign Up</SwitchSignInUp>
             </FormWrapper>
         </Form>
     )
@@ -86,8 +87,8 @@ export function SignUp({ setShowSignUp }) {
                     }
                 })} placeholder="Confirm Password" />
                 <FormWrapper>
-                    <button type="submit">Sign up</button>
-                    <span onClick={() => setShowSignUp(prevState => !prevState)}>Click here to Sign In.</span>
+                    <ModalButton type="submit">Sign up</ModalButton>
+                    <SwitchSignInUp onClick={() => setShowSignUp(prevState => !prevState)}>Click here to Sign In.</SwitchSignInUp>
                 </FormWrapper>
             </FormWrapper>
         </Form>
@@ -101,16 +102,18 @@ const Form = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 `
 
 const FormHeader = styled.h2`
-    font-size: 2rem;
+    font-size: 1rem;
+    color: white;
     margin: 0;
 `
 
 const FormWrapper = styled.div`
     display: flex;
-    padding: 1rem;
+    padding: 0.5rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -120,4 +123,13 @@ const FormWrapper = styled.div`
 const Input = styled.input`
     margin: 0.5rem;
 
+`
+const ModalButton = styled.button`
+margin-bottom: 1rem;
+cursor:pointer;
+
+`
+const SwitchSignInUp = styled.span`
+cursor: pointer;
+color: #4b70e2;
 `

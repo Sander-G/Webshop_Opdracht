@@ -14,7 +14,7 @@ export default function Modal() {
     const closeBtnRef = useRef(null);
     const containerRef = useRef(null);
     const dispatch = useDispatch();
-    const [showSignUp, setShowSignUp] = useState(false);
+    const [showSignUp, setShowSignUp] = useState(true);
 
     const handleToggle = (e) => {
         if (e.target === closeBtnRef.current || e.target === containerRef.current) {
@@ -46,25 +46,33 @@ const Container = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 2;
 `;
 
 const ModalWrapper = styled.div`
-    color: black;
+    color: White;
     display: flex;
-    padding: 2rem;
+    padding: 1.5rem;
     align-items: center;
     flex-direction: column;
-    background-color: white;
-    border-radius: 1rem;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
     
 `;
 
-const CloseButton = styled.button`
+const CloseButton = styled.div`
     align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+    border: 0.5px solid grey;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
     
 `;
 

@@ -12,10 +12,6 @@ import Favourites from "./pages/Favourites/Favourites";
 import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
 import NotFound from "./components/NotFound/NotFound";
 import { NewsLetter } from "./components/NewsLetter/NewsLetter";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-
-
 
 // Redux
 import { productsApi } from "./features/productsAPI";
@@ -36,8 +32,7 @@ const store = configureStore({
 
     [productsApi.reducerPath]: productsApi.reducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productsApi.middleware),
+  
 });
 
 store.dispatch(productsFetch());
@@ -60,8 +55,7 @@ root.render(
             <Route path="/ShoppingCart" element={<ShoppingCart />} />
             <Route path="/NotFound" element={<NotFound />} />
             <Route path="/NewsLetter" element={<NewsLetter />} />
-            <Route path="/Login" element={<Login />} /> 
-            <Route path="/Register" element={<Register />} /> 
+  
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
