@@ -59,7 +59,7 @@ export function SignUp({ setShowSignUp }) {
     return (
         <Form onSubmit={handleSignUp}>
             <FormHeader>
-                Sign up!
+                Please sign up!
             </FormHeader>
             <FormWrapper>
                 <Input value={details.username} onChange={(e) => setDetails(details => {
