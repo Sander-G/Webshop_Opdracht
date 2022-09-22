@@ -32,7 +32,7 @@ export function Vintage() {
         {isLoading ? (<p>Loading...</p>) :
           error ? (<p>An error occured..</p>) :
             (<>
-              {data?.map((product) => 
+              {data?.map((product) =>
                 product.category === "Vintage" ?
                   <Product key={product.id} >
                     <AddToFavourites alt="add to Favourites" onClick={() => handleAddToFavourites(product)} />
@@ -45,10 +45,10 @@ export function Vintage() {
                     <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
                   </Product>
                   : <></>)
-              };
+              }
             </>
             )
-        };
+        }
       </ProdContainer>
       <StartShopping>
         <Link to="/"><h4>Back to main..</h4></Link>

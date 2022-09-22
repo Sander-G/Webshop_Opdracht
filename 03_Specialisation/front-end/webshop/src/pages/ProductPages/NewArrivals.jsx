@@ -42,14 +42,14 @@ export function NewArrivals() {
                     <Title> {product.title} </Title>
                     <Details>
                       <span>{product.desc}</span>
-                      <Price>€{product.price}</Price>
+                      <Price>€ {product.price}</Price>
                     </Details>
                     <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
                   </Product>
                   : <></>)
-              };
-          </>)
-        };
+              }
+            </>)
+        }
       </ProdContainer>
       <StartShopping>
         <Link to="/"><h4>Back to main..</h4></Link>

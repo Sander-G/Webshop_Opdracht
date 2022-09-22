@@ -171,8 +171,8 @@ const CartProduct = styled.div`
 
 const CartImage = styled.img`
   width: 150px;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
   margin-right: 1rem;
 `;
 

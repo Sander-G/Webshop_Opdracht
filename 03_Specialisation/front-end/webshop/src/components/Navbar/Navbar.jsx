@@ -3,6 +3,8 @@ import Badge from "@material-ui/core/Badge";
 
 import { Link } from "react-router-dom";
 import { useCartQuantity } from "../../utils/useCartQuantity";
+import { useDispatch } from "react-redux";
+import { toggleModal } from '../../features/displayReducer';
 
  
 import CartSrc from "./../../images/skateCart.png";
@@ -12,6 +14,7 @@ import LogoSrc from "./../../images/skippy.png";
 import LoginSrc from "./../../images/loginIcon.png";
 
 export function Navbar() {
+    const dispatch = useDispatch();
     const { total } = useCartQuantity();
 
 
@@ -33,9 +36,9 @@ export function Navbar() {
             <Cart />
           </Link>
         </Badge>
-        <Link to="/Login">
-          <Login />
-        </Link>
+        
+          <Login onClick={() => dispatch(toggleModal())}/>
+        
       
       </NavItems>
     </Container>

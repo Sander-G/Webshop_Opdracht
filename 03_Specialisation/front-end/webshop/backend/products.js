@@ -223,7 +223,7 @@ const products = [
     title: "1986 Powell Peralta Tony Hawk Chicken Skull",
     desc: "Gripped but never set up, has good amount of storage marks, scuffs, scratches etc.",
     category: "Vintage",
-    price: "1799.959",
+    price: "1799.95",
     image: "https://res.cloudinary.com/ordinator/image/upload/c_scale,w_250/v1663664037/SkippySkateboards/28_zqoo3v.jpg",
   },
   {

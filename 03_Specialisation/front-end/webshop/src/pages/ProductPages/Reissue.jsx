@@ -23,13 +23,13 @@ export function Reissue() {
     dispatch(addToFavourites(product));
   };
 
-    return (
-        <Container>
-        <Banner>
-          <h1> Reissued Skateboards </h1>
-          <SubHeaderText>Fresh classic skateboard designs </SubHeaderText>
-        </Banner>
-        <ProdContainer>
+  return (
+    <Container>
+      <Banner>
+        <h1> Reissued Skateboards </h1>
+        <SubHeaderText>Fresh classic skateboard designs </SubHeaderText>
+      </Banner>
+      <ProdContainer>
         {isLoading ? (<p>Loading...</p>) :
           error ? (<p>An error occured..</p>) :
             (<>
@@ -45,17 +45,17 @@ export function Reissue() {
                     </Details>
                     <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
                   </Product>
-                : <></>)
-              };
+                  : <></>)
+              }
             </>
             )
-        };
-        </ProdContainer>
-        <StartShopping>
-          <Link to="/"><h4>Back to main..</h4></Link>
-        </StartShopping>
-        </Container>
-    );
+        }
+      </ProdContainer>
+      <StartShopping>
+        <Link to="/"><h4>Back to main..</h4></Link>
+      </StartShopping>
+    </Container>
+  );
 };
 
 //Styled Components

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
     favouriteItems: localStorage.getItem("favouriteItems")
@@ -16,10 +17,16 @@ const favouritesSlice = createSlice({
                 (item) => item.id === action.payload.id
             );
             if (itemIndex >= 0) {
-                state.favouriteItems[itemIndex].favouritesQuantity = 1;
+                
+                toast.info(
+                    `Product already added to Favourites!`
+                );
             } else {
                 const tempFavourite = { ...action.payload, favouritesQuantity: 1 };
                 state.favouriteItems.push(tempFavourite);
+                toast.info(
+                    `${action.payload.title} added to Favourites!`
+                );
             }
             localStorage.setItem(
                 "favouriteItems",
@@ -36,10 +43,16 @@ const favouritesSlice = createSlice({
                 "favouriteItems",
                 JSON.stringify(state.favouriteItems)
             );
+            toast.info(
+                `${action.payload.title} removed from shopping cart!`
+            );
         },
 
         clearFavourites(state, action) {
             state.favouriteItems = [];
+            toast.info(
+                "Your favourites list has been cleared!"
+            );
         },
         // get total favourites
     },

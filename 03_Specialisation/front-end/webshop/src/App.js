@@ -2,22 +2,28 @@
 import GlobalStyle from "./styles/GlobalStyle";
 
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Navbar } from "./components/Navbar/Navbar";
 import { Footer } from "./components/Footer/Footer";
-import { useState } from "react"
-import { ToastContainer } from "react-toastify";
-import  Login  from "./components/Login/Login.jsx"
-import  Register  from "./components/Register/Register.jsx"
+import Modal from "./components/Modal/Modal"
  
-import "react-toastify/dist/ReactToastify.css";
+
+
 
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
+
+  const modal = useSelector(state => state.display.modal);
+
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle modal={modal}/>
+      {modal && <Modal />}
       <ToastContainer
         position="top-right"
         autoClose="2500"
@@ -27,8 +33,7 @@ function App() {
       <Outlet />
       {isLoggedIn && <h1>Logged in!</h1>}
       <Footer />
-      <Login setLoggedIn={setLoggedIn}/>
-      <Register setLoggedIn={setLoggedIn}/>
+      
      
     </>
   );

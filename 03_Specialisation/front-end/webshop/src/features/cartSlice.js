@@ -40,9 +40,9 @@ const cartSlice = createSlice({
                 (cartItem) => cartItem.id !== action.payload.id
             );
             state.cartItems = nextCartItems;
-            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
             toast.info(
-                `One ${action.payload.title} removed from shopping cart!`
+                `${action.payload.title} removed from shopping cart!`
             );
         },
 
@@ -60,6 +60,9 @@ const cartSlice = createSlice({
                 state.cartItems = nextCartItems;
             }
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+            toast.info(
+                `Removed one ${action.payload.title} from shopping cart!`
+            );
         },
 
         clearCart(state) {

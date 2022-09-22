@@ -18,6 +18,7 @@ const  GlobalStyle  =  createGlobalStyle`
         overflow-x: hidden;
         min-height: 100vh;
         position: relative;
+        ${props => props.modal ? "overflow:hidden;" : ""} // modal actief = overflow hidden 
 
     }
 

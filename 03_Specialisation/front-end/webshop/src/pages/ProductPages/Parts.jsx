@@ -44,10 +44,10 @@ export function Parts() {
                     <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
                   </Product>
                   : <></>)
-              };
+              }
             </>
             )
-        };
+        }
       </ProdContainer>
       <StartShopping>
         <Link to="/"><h4>Back to main..</h4></Link>
