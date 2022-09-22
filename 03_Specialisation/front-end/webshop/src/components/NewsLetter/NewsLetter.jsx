@@ -4,6 +4,9 @@ import backgroundSrc from "./../../images/newsletterBanner.jpg";
 import { toast } from "react-toastify";
 
 export function NewsLetter() {
+ 
+
+
     return (
         <Container>
             <h1>NewsLetter</h1>
@@ -11,13 +14,14 @@ export function NewsLetter() {
             <form>
                 <input type="email" placeholder="E-mail goes here.." required />
 
-                <button onClick={() =>
+                <button onSubmit={() =>
                     toast.info("You have signed up for our newsletter!")}>
                     Sign up!</button>
             </form>
         </Container>
     )
 };
+
 
 const Container = styled.div`
   width: 90vw;
