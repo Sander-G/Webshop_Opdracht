@@ -20,7 +20,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import cartReducer, { getTotals } from "./features/cartSlice";
 import favouritesReducer from "./features/favouritesSlice";
-import displayReducer from "./features/displayReducer";
+import displayReducer from "./features/displaySlice";
 
 
 const store = configureStore({

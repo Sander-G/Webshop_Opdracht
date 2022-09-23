@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 
 import styled from 'styled-components'
-import { toggleModal } from '../../features/displayReducer'
+import { toggleModal } from '../../features/displaySlice'
 import { SignIn, SignUp } from './Form/Form'
 
 

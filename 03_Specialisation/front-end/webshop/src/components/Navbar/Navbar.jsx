@@ -4,7 +4,7 @@ import Badge from "@material-ui/core/Badge";
 import { Link } from "react-router-dom";
 import { useCartQuantity } from "../../utils/useCartQuantity";
 import { useDispatch } from "react-redux";
-import { toggleModal } from '../../features/displayReducer';
+import { toggleModal } from '../../features/displaySlice';
 import {logOut }  from '../../utils/firebase'
 
  
