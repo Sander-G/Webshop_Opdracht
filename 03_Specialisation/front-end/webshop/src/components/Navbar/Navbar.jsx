@@ -20,7 +20,7 @@ export function Navbar() {
     const dispatch = useDispatch();
     const { total } = useCartQuantity();
 
-    const [showSignedIn, setShowSignedIn] = useState(false);
+    // const [showSignedIn, setShowSignedIn] = useState(false);
 
 
  
@@ -43,7 +43,7 @@ export function Navbar() {
         </Badge>
         <LogInWrapper>
           <LogIn onClick={() => dispatch(toggleModal())}/>
-          <LogInStatus onClick={logOut}>Log&nbsp;out</LogInStatus>
+          {/* <LogInStatus onClick={logOut}>Log&nbsp;out</LogInStatus> */}
           </LogInWrapper>
         
       
@@ -91,6 +91,10 @@ const Favourites = styled.img.attrs({
   width: 40px;
   height: 40px;
   padding: .1rem;
+  @media (max-width: 500px) {
+    width: 30px;
+  height: 30px;
+  }
 `;
 
 const Cart = styled.img.attrs({
@@ -102,6 +106,8 @@ const Cart = styled.img.attrs({
   margin-left: .8em;
   @media (max-width: 500px) {
     margin-left: .1em;
+    width: 30px;
+  height: 30px;
   }
 `;
 
@@ -115,7 +121,7 @@ const Banner = styled.img.attrs({
     max-height: 4rem;
   }
   @media (max-width: 500px) {
-    max-height: 2.5rem;
+    max-height: 3rem;
   }
 `;
 
@@ -143,17 +149,33 @@ const LogIn = styled.img.attrs({
   height: 30px;
   padding: .2rem;
   margin-left: .8em;
-  margin-top: 6px;
+  margin-top: 8px;
+  
   @media (max-width: 500px) {
-    margin-left: .1em;
+    padding: 0;
+  margin-left: 0;
+  margin-top: 2px;
   }
+
+
+
+  
   
 `;
 
 const LogInWrapper = styled.div`
 display: flex;
 flex-direction: column;
-margin-right: 1rem
+margin-right: 1rem;
+@media (max-width: 500px) {
+    margin-left: .1em;
+    width: 30px;
+  height: 30px;
+  padding: .2rem;
+  margin-right: -0.7rem;
+ 
+  }
+
 `
 
 const LogInStatus = styled.div`

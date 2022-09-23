@@ -7,7 +7,7 @@ export function NewArrivalBanner() {
         
         <Container>
             <Link to="/NewArrivals"><HeaderText>New Arrivals</HeaderText></Link>
-            <SubHeaderText>Freshly rolled into our store.</SubHeaderText>
+            {/* <SubHeaderText>Freshly rolled into our store.</SubHeaderText> */}
         </Container>
         )
 };
@@ -26,6 +26,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;  
+  @media (max-width: 768px) {
+    background-position: -2.4cm;
+  }
+  @media (max-width: 500px) {
+    background-position: -3.4cm;
+   
+  }
  `;
 
  const HeaderText = styled.h1`

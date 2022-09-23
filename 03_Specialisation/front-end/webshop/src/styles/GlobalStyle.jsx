@@ -27,8 +27,20 @@ const  GlobalStyle  =  createGlobalStyle`
         text-shadow: 1px 1px #2b2b28;
         color: white;
 
-        
-    }
+       
+  }
+  @media (max-width: 500px) {
+         h1 {
+            font-size: 
+            2rem;
+         }
+         h3 {
+            font-size: 
+            1rem;
+         }
+
+  }
+    
 
     a, a:visited, a:active, a:link {
 

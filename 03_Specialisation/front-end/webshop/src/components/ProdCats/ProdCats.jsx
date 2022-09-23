@@ -60,6 +60,16 @@ const Vintage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  @media (max-width: 768px) {
+    background-position: -2.4cm;
+  }
+  @media (max-width: 500px) {
+    background-position: -3.4cm;
+   
+  }
+
+
 `
 
 const Reissue = styled.div`

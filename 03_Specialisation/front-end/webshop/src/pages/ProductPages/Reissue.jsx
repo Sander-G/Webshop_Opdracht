@@ -70,6 +70,9 @@ const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+  @media (max-width: 500px) {
+    padding-top: 4.8rem;
+  }
   
  `;
 
@@ -88,7 +91,11 @@ const Banner = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;  
- `;
+  @media (min-width: 769px) {
+    background-size: 78%;
+    background-position: 2.9cm;
+  }
+`
 
 const SubHeaderText = styled.p`
 text-shadow: 1px 1px #2b2b28;

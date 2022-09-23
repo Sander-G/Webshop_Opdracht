@@ -39,6 +39,14 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    background-position: -3cm;
+  }
+  @media (max-width: 500px) {
+    background-position: -3.4cm;
+   
+  }
  `;
 
 const SubHeaderText = styled.p`
