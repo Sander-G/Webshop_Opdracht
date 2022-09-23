@@ -39,4 +39,8 @@ const Container = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+
+  @media (max-width: 500px) {
+    padding-top: 4.8rem;
+  }
  `

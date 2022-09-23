@@ -14,7 +14,7 @@ export function Footer() {
                 <Facebook/>
                 <Tiktok/>
             </Socials>
-            <Copyright>© Skippy's Vintage Skateboards - 2022</Copyright>
+            <Copyright>© Skippy's Skateboards - 2022</Copyright>
         </Container>
     )
 }
@@ -32,11 +32,18 @@ const Container = styled.footer`
   border-top: 1px solid black;
 `;
 const Socials = styled.div`
+display: flex;
 padding-left: 3rem;
-`
+@media (max-width: 500px) {
+  padding-left: 1.5rem;
+  }
+`;
 
 const Copyright = styled.div`
 padding-right: 3rem;
+@media (max-width: 500px) {
+  padding-right: 1.5rem;
+  }
 `;
 
 const Facebook = styled.img.attrs({
