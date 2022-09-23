@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { createNewAccount, loginToAccount } from '../../../utils/firebase';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export function SignIn({ setShowSignUp }) {
@@ -35,7 +37,7 @@ export function SignIn({ setShowSignUp }) {
             </FormWrapper>
             <FormWrapper>
                 <ModalButton type="submit">Sign in</ModalButton>
-                <SwitchSignInUp onClick={() => setShowSignUp(prevState => !prevState)}>Click here to Sign Up</SwitchSignInUp>
+                <SwitchSignInUp onClick={() => setShowSignUp(prevState => !prevState)}>Click here to Register</SwitchSignInUp>
             </FormWrapper>
         </Form>
     )
@@ -52,7 +54,8 @@ export function SignUp({ setShowSignUp }) {
 
     const handleSignUp = (e) => {
         e.preventDefault();
-        if (details.password !== details.confirm_password) throw new Error('Passwords do not match')
+        if (details.password !== details.confirm_password) 
+        throw new Error('Passwords do not match') 
         createNewAccount(details.username, details.email, details.password)
     }
 

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useCartQuantity } from "../../utils/useCartQuantity";
 import { useDispatch } from "react-redux";
 import { toggleModal } from '../../features/displayReducer';
+import {logOut }  from '../../utils/firebase'
 
  
 import CartSrc from "./../../images/skateCart.png";
@@ -12,10 +13,14 @@ import HeartSrc from "./../../images/skateHeart.png";
 import BannerSrc from "./../../images/Banner.png";
 import LogoSrc from "./../../images/skippy.png";
 import LoginSrc from "./../../images/loginIcon.png";
+import { useState } from "react";
+
 
 export function Navbar() {
     const dispatch = useDispatch();
     const { total } = useCartQuantity();
+
+    const [showSignedIn, setShowSignedIn] = useState(false);
 
 
  
@@ -36,8 +41,10 @@ export function Navbar() {
             <Cart />
           </Link>
         </Badge>
-        
-          <Login onClick={() => dispatch(toggleModal())}/>
+        <LogInWrapper>
+          <LogIn onClick={() => dispatch(toggleModal())}/>
+          <LogInStatus onClick={logOut}>Log&nbsp;out</LogInStatus>
+          </LogInWrapper>
         
       
       </NavItems>
@@ -57,6 +64,10 @@ padding: 1em;
 position: fixed;
 top: 0;
 width: 100vw;
+
+@media (max-width: 500px) {
+  height: 3rem;
+  }
 `;
 
 const NavItems = styled.div`
@@ -64,6 +75,14 @@ display: flex;
 flex-direction: row;
 padding: 3em;
 margin-right: 2rem;
+
+@media (max-width: 768px) {
+    padding: 2em;
+  }
+  @media (max-width: 500px) {
+    padding: 1em;
+    margin-right: 2rem;
+  }
 `;
 
 const Favourites = styled.img.attrs({
@@ -81,25 +100,43 @@ const Cart = styled.img.attrs({
   height: 40px;
   padding: .2rem;
   margin-left: .8em;
+  @media (max-width: 500px) {
+    margin-left: .1em;
+  }
 `;
 
 const Banner = styled.img.attrs({
   src: `${BannerSrc}`
 })`
-  max-width: auto;
   max-height: 5rem;
   margin-top: -.5rem;
+
+  @media (max-width: 768px) {
+    max-height: 4rem;
+  }
+  @media (max-width: 500px) {
+    max-height: 2.5rem;
+  }
 `;
 
 const Logo = styled.img.attrs({
   src: `${LogoSrc}`
 })`
-  height: 6rem;
+  max-height: 6rem;
   margin-left: 2rem;
   margin-right: 1rem;
+
+  @media (max-width: 768px) {
+    max-height: 4rem;
+  }
+  @media (max-width: 500px) {
+    max-height: 3rem;
+    margin-left: 0.5rem;
+  margin-right: 0.1rem;
+  }
 `;
 
-const Login = styled.img.attrs({
+const LogIn = styled.img.attrs({
   src: `${LoginSrc}`
 })`
   width: 30px;
@@ -107,4 +144,26 @@ const Login = styled.img.attrs({
   padding: .2rem;
   margin-left: .8em;
   margin-top: 6px;
+  @media (max-width: 500px) {
+    margin-left: .1em;
+  }
+  
 `;
+
+const LogInWrapper = styled.div`
+display: flex;
+flex-direction: column;
+margin-right: 1rem
+`
+
+const LogInStatus = styled.div`
+display:flex;
+align-items: center;
+justify-content: center;
+margin-left: .8em;
+
+@media (max-width: 500px) {
+    margin-left: .1em;
+  }
+cursor: pointer;
+`
