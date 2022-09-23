@@ -44,9 +44,10 @@ const Container = styled.div`
     background-position: -3cm;
   }
   @media (max-width: 500px) {
-    background-position: -3.4cm;
+    background-position: center;
     height: 20vh;
     margin-bottom: 3rem;
+    font-size: 1rem;
    
   }
  `;
