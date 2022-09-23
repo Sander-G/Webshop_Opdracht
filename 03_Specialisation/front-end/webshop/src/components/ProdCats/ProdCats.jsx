@@ -46,6 +46,15 @@ const ProdCatWrapper = styled.div`
  flex-direction: row;
  width: 90vw;
  justify-content: space-between;
+ @media (max-width: 500px) {
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   
+  }
+
+
 
  `
 const Vintage = styled.div`
@@ -65,8 +74,9 @@ const Vintage = styled.div`
     background-position: -2.4cm;
   }
   @media (max-width: 500px) {
-    background-position: -3.4cm;
-   
+    background-position: center;
+    height: 20vh;
+    width: 90vw;
   }
 
 
@@ -77,7 +87,6 @@ const Reissue = styled.div`
   height: 28.5vh;
   background-image: url(${reissueSrc});
   background-size: cover;
-  
   background-position: center;
   color: white;
   font-size: 1.2rem;
@@ -86,13 +95,18 @@ const Reissue = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 500px) {
+    background-position: center;
+    height: 20vh;
+    width: 90vw;
+    margin-top: 1rem;
+   
+  }
 
 `
 const Parts = styled.div`
   width: 28.5vw;
   height:28.5vh;
-
-  /* background-color: ${colors.tertiary}; */
   background-image: url(${partsSrc});
   background-size: cover;
   color: white;
@@ -102,6 +116,14 @@ const Parts = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 500px) {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 90vw;
+    margin-top: 1rem;
+   
+  }
   
  
 `

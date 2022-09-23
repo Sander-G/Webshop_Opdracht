@@ -95,6 +95,9 @@ const Banner = styled.div`
     background-size: 78%;
     background-position: 2.9cm;
   }
+  @media (max-width: 500px) {
+    height: 20vh;
+  }
 `
 
 const SubHeaderText = styled.p`

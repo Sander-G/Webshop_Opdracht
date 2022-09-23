@@ -29,17 +29,7 @@ const  GlobalStyle  =  createGlobalStyle`
 
        
   }
-  @media (max-width: 500px) {
-         h1 {
-            font-size: 
-            2rem;
-         }
-         h3 {
-            font-size: 
-            1rem;
-         }
 
-  }
     
 
     a, a:visited, a:active, a:link {

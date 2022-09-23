@@ -45,6 +45,8 @@ const Container = styled.div`
   }
   @media (max-width: 500px) {
     background-position: -3.4cm;
+    height: 20vh;
+    margin-bottom: 3rem;
    
   }
  `;

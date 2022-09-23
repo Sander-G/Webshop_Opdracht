@@ -87,6 +87,9 @@ const Banner = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;  
+  @media (max-width: 500px) {
+    height: 20vh;
+  }
  `;
 
 const SubHeaderText = styled.p`

@@ -93,6 +93,8 @@ const Banner = styled.div`
   }
   @media (max-width: 500px) {
     background-position: 30%;
+    height: 20vh;
+
   }
  `;
 

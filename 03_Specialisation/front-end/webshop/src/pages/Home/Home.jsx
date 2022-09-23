@@ -42,5 +42,7 @@ const Container = styled.div`
 
   @media (max-width: 500px) {
     padding-top: 4.8rem;
+
+
   }
  `
