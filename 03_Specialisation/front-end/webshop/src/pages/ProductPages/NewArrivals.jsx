@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg";
 import heart from "../../images/heart.svg";
 
@@ -42,7 +43,7 @@ export function NewArrivals() {
                     <Title> {product.title} </Title>
                     <Details>
                       <span>{product.desc}</span>
-                      <Price>€ {product.price}</Price>
+                      <PriceOriginal>€ {product.price}</PriceOriginal>
                     </Details>
                     <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
                   </Product>
@@ -51,6 +52,36 @@ export function NewArrivals() {
             </>)
         }
       </ProdContainer>
+
+      <AnimContainer>
+        <Wrapper>
+          <Card>
+            <Front>
+              <H1>Signature</H1>
+              <P>7.7 deck<Span>2018</Span></P>
+              <Price>$ 89.00</Price>
+            </Front>
+
+            <Right className="right">
+              <H2>Signature</H2>
+              <Ul>
+                <Li>Width	7.7"</Li>
+                <Li>Length	31.75"</Li>
+                <Li>Wheelbase	14"</Li>
+                <Li>Nose	6.875"</Li>
+                <Li>Tail	6.25"</Li>
+              </Ul>
+              <Button>Add to cart, yo</Button>
+            </Right>
+
+          </Card>
+          <ImgWrapper className="img-wrapper">
+            <BoardImg src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/577128/deck.png' alt='' />
+          </ImgWrapper>
+        </Wrapper>
+      </AnimContainer>
+
+
       <StartShopping>
         <Link to="/"><h4>Back to main..</h4></Link>
       </StartShopping>
@@ -59,6 +90,185 @@ export function NewArrivals() {
 };
 
 // Styled Components
+
+const Wrapper = styled.div`
+  width: 280px;
+  height: 480px;
+  perspective: 600px;
+  position: relative;
+`;
+
+const Card = styled.div`
+  width: 320px;
+  height: 450px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-140px);
+  transition: transform 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  cursor: pointer;
+
+  > div{
+  position: absolute;
+  width: 320px;
+  height: 450px;
+  padding: 34px 21px;
+  transition: all 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000); 
+  }
+
+  &:hover{
+  transform: translateZ(-160px) rotateY( -90deg);
+  }
+
+  &:hover .front{
+  opacity: 0; 
+  }
+  
+  &:hover .right{
+  opacity: 1; 
+  }
+
+  &:hover ~ .img-wrapper img{
+  transform: scale(0.9) translateX(77%) translateY(90%) rotateZ(80deg);
+}
+
+`;
+
+const Span = styled.span`
+  margin-left: 13px;
+  opacity: .55;
+`
+
+const Front = styled.div`
+ background-image: linear-gradient(180deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%);
+  transform: rotateY(0deg) translateZ(160px); 
+  border-radius: 34px 3px 0 0;
+`;
+
+const Right = styled.div`
+background-image: linear-gradient(0deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%);
+opacity: 0.08;
+  transform: rotateY(90deg) translateZ(160px);
+  border-radius: 0 0 3px 34px;
+`;
+
+const Price = styled.p`
+position: absolute;
+bottom: 34px;
+left: 21px;
+font-size: 34px;
+opacity: .34;
+`;
+
+const ImgWrapper = styled.div`
+  animation: float 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate;
+  position: absolute;
+  top: 0; right: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+
+
+  
+`;
+
+const floatAnim = keyframes`
+  0% {
+    transform: translateZ(20px);
+  }
+  100% {
+    transform: translateY(-21px) translateX(-13px) translateZ(30px);
+  }
+`;
+
+const AnimContainer = styled.div`
+ display: flex;
+  width: 100vw;
+  height: 60vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(-55deg, rgba(50,45,55,1) 0%, rgba(101,96,106,1) 100%);
+  color: #f5f5f5;
+  font-family: 'Roboto';
+  font-weight: 300;
+  /* animation: fadeIn .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1; */
+`;
+
+
+
+const BoardImg = styled.img`
+ transform-origin: top right;
+  transition: transform 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  transition-delay: 100ms;
+  transform: translateX(21%) rotateZ(13deg) skewX(3deg);
+  pointer-events: none;
+`
+
+const H1 = styled.h1`
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: -.25px;
+  transform: translateX(-44px);
+  font-family: 'Helvetica'; 
+  font-weight: 700;
+`
+const H2 = styled.h2`
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -.25px;
+  transform: translateX(-34px);
+  font-family: 'Sarala'; 
+  font-weight: 700;
+`
+
+const P = styled.p`
+margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+`
+
+const Ul = styled.ul`
+  margin-left: 21px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 300;
+  list-style: none;
+`
+
+const Li = styled.li`
+padding-bottom: 8px;
+  position: relative;
+  &:before{
+  content: 'x';
+  position: absolute;
+  left: -21px;
+  opacity: .55;
+}
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Container = styled.div`
   width: 100%;
   padding-top: 7rem;
@@ -145,7 +355,7 @@ const Details = styled.div`
   margin-right: 0.5em;
 `;
 
-const Price = styled.span`
+const PriceOriginal = styled.span`
   font-size: 20px;
   font-weight: 700;
 `;

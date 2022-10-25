@@ -1,5 +1,7 @@
 import  { createGlobalStyle }  from  'styled-components';
 
+
+
 export const colors = {
     primary: "lightblue",
     secondary: "#fff",
@@ -8,7 +10,10 @@ export const colors = {
 }
 
 
+
 const  GlobalStyle  =  createGlobalStyle`
+
+    
     body  {
         margin:  0;
         font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
