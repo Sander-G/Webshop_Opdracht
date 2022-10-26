@@ -28,7 +28,7 @@ export function NewArrivals() {
         <h1>New Arrivals</h1>
         <SubHeaderText>Freshly rolled into our store.</SubHeaderText>
       </Banner>
-      <ProdContainer>
+      {/* <ProdContainer>
         {isLoading ? (<p>Loading...</p>) :
           error ? (<p>An error occured..</p>) :
             (<>
@@ -50,7 +50,7 @@ export function NewArrivals() {
               }
             </>)
         }
-      </ProdContainer>
+      </ProdContainer> */}
 
       <AnimContainer>
         <Wrapper>
@@ -142,14 +142,14 @@ const Span = styled.span`
 `
 
 const Front = styled.div`
- background-image: linear-gradient(180deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%);
+ /* background-image: linear-gradient(180deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%); */
   transform: rotateY(0deg) translateZ(160px); 
   border-radius: 34px 3px 0 0;
 `;
 
 const Right = styled.div`
-background-image: linear-gradient(0deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%);
-opacity: 0.08;
+/* background-image: linear-gradient(0deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%); */
+opacity: 0;
   transform: rotateY(90deg) translateZ(160px);
   border-radius: 0 0 3px 34px;
 `;
@@ -190,8 +190,8 @@ const AnimContainer = styled.div`
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-image: linear-gradient(-55deg, rgba(50,45,55,1) 0%, rgba(101,96,106,1) 100%);
-  color: #f5f5f5;
+  /* background-image: linear-gradient(-55deg, rgba(50,45,55,1) 0%, rgba(101,96,106,1) 100%); */
+  color: black;
   font-family: 'Roboto';
   font-weight: 300;
   /* animation: fadeIn .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1; */
