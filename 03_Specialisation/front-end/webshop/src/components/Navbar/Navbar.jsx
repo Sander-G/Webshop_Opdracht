@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useCartQuantity } from "../../utils/useCartQuantity";
 import { useDispatch } from "react-redux";
 import { toggleModal } from '../../features/displaySlice';
-import {logOut }  from '../../utils/firebase'
+// import {logOut }  from '../../utils/firebase'
 
  
 import CartSrc from "./../../images/skateCart.png";

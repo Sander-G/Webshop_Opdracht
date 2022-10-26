@@ -28,7 +28,7 @@ export function NewArrivals() {
         <h1>New Arrivals</h1>
         <SubHeaderText>Freshly rolled into our store.</SubHeaderText>
       </Banner>
-      {/* <ProdContainer>
+      <ProdContainer>
         {isLoading ? (<p>Loading...</p>) :
           error ? (<p>An error occured..</p>) :
             (<>
@@ -50,12 +50,12 @@ export function NewArrivals() {
               }
             </>)
         }
-      </ProdContainer> */}
+      </ProdContainer>
 
       <AnimContainer>
         <Wrapper>
           <Card>
-            <Front>
+            <Front className="front">
               <H1>Signature</H1>
               <P>7.7 deck<Span>2018</Span></P>
               <Price>$ 89.00</Price>
@@ -93,10 +93,24 @@ export function NewArrivals() {
 };
 
 // Styled Components
-
+const AnimContainer = styled.div`
+ display: flex;
+  width: 600px;
+  height: 600px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  /* background-image: linear-gradient(-55deg, rgba(50,45,55,1) 0%, rgba(101,96,106,1) 100%); */
+  color: black;
+  font-family: 'Helvetica';
+  font-weight: 300;
+  /* animation: fadeIn .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1; */
+`;
 const Wrapper = styled.div`
   width: 280px;
-  height: 480px;
+  height: 450px;
   perspective: 600px;
   position: relative;
 `;
@@ -113,8 +127,8 @@ const Card = styled.div`
   > div{
   position: absolute;
   width: 320px;
-  height: 450px;
-  padding: 34px 21px;
+  height: 300px;
+  padding: 5px 10px;
   transition: all 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000); 
   }
 
@@ -123,7 +137,8 @@ const Card = styled.div`
   }
 
   &:hover .front{
-  opacity: 0; 
+  opacity: 0;
+  color: white; 
   }
   
   &:hover .right{
@@ -151,15 +166,15 @@ const Right = styled.div`
 /* background-image: linear-gradient(0deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%); */
 opacity: 0;
   transform: rotateY(90deg) translateZ(160px);
-  border-radius: 0 0 3px 34px;
+  border-radius: 0 0 3px 15px;
 `;
 
 const Price = styled.p`
 position: absolute;
-bottom: 34px;
-left: 21px;
-font-size: 34px;
-opacity: .34;
+bottom: 60px;
+left: 10px;
+font-size: 2rem;
+opacity: .5;
 `;
 
 const ImgWrapper = styled.div`
@@ -176,26 +191,7 @@ const ImgWrapper = styled.div`
   `
 
 
-  
 
-
-
-const AnimContainer = styled.div`
- display: flex;
-  width: 100vw;
-  height: 60vh;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  /* background-image: linear-gradient(-55deg, rgba(50,45,55,1) 0%, rgba(101,96,106,1) 100%); */
-  color: black;
-  font-family: 'Roboto';
-  font-weight: 300;
-  /* animation: fadeIn .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1; */
-`;
 
 
 
@@ -205,11 +201,13 @@ const BoardImg = styled.img`
   transition-delay: 100ms;
   transform: translateX(21%) rotateZ(13deg) skewX(3deg);
   pointer-events: none;
+  width: 75%;
 `
 
 const H1 = styled.h1`
   margin: 0;
   font-size: 38px;
+  color: black;
   letter-spacing: -.25px;
   transform: translateX(-44px);
   font-family: 'Helvetica'; 
@@ -219,8 +217,11 @@ const H2 = styled.h2`
   margin: 0;
   font-size: 21px;
   letter-spacing: -.25px;
+ 
+  text-align: left;
+  color: black;
   transform: translateX(-34px);
-  font-family: 'Sarala'; 
+  font-family: 'Helvetica'; 
   font-weight: 700;
 `
 
@@ -241,12 +242,7 @@ const Ul = styled.ul`
 const Li = styled.li`
 padding-bottom: 8px;
   position: relative;
-  &:before{
-  content: 'x';
-  position: absolute;
-  left: -21px;
-  opacity: .55;
-}
+ 
 `;
 
 
