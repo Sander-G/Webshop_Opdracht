@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { keyframes } from "styled-components";
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg";
 import heart from "../../images/heart.svg";
 
@@ -75,8 +74,12 @@ export function NewArrivals() {
             </Right>
 
           </Card>
-          <ImgWrapper className="img-wrapper">
-            <BoardImg src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/577128/deck.png' alt='' />
+          {/* <ImgWrapper className="img-wrapper">
+            <BoardImg src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/577128/deck.png' alt='' /> */}
+            <ImgWrapper className="img-wrapper">
+            <BoardImg src='https://res.cloudinary.com/ordinator/image/upload/c_scale,w_250/v1663661694/SkippySkateboards/23_v2l0cw.jpg' alt='' />
+          
+            
           </ImgWrapper>
         </Wrapper>
       </AnimContainer>
@@ -170,14 +173,6 @@ const ImgWrapper = styled.div`
   
 `;
 
-const floatAnim = keyframes`
-  0% {
-    transform: translateZ(20px);
-  }
-  100% {
-    transform: translateY(-21px) translateX(-13px) translateZ(30px);
-  }
-`;
 
 const AnimContainer = styled.div`
  display: flex;
