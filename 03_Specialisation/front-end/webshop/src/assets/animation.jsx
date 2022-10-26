@@ -1,6 +1,6 @@
 import { keyframes } from "styled-components";
 
-const float = keyframes`
+export const float = keyframes`
   0% {
     transform: translateZ(20px);
   }

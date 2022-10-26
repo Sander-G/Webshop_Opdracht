@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg";
 import heart from "../../images/heart.svg";
-
+import {float} from "../../assets/animation"
 import { useNavigate, Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
@@ -163,15 +163,21 @@ opacity: .34;
 `;
 
 const ImgWrapper = styled.div`
-  animation: float 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate;
+  /* animation: float 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate; */
+  animation: ${float};
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  animation-direction: alternate;
   position: absolute;
   top: 0; right: 0;
   pointer-events: none;
   backface-visibility: hidden;
+  `
 
 
   
-`;
+
 
 
 const AnimContainer = styled.div`
