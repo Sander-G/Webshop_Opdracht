@@ -77,7 +77,7 @@ export function NewArrivals() {
           {/* <ImgWrapper className="img-wrapper">
             <BoardImg src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/577128/deck.png' alt='' /> */}
             <ImgWrapper className="img-wrapper">
-            <BoardImg src='https://res.cloudinary.com/ordinator/image/upload/c_scale,w_250/v1663661694/SkippySkateboards/23_v2l0cw.jpg' alt='' />
+            <BoardImg src='https://res.cloudinary.com/ordinator/image/upload/v1666793669/SkippySkateboards/hulkdeck_reafuw.png' alt='' />
           
             
           </ImgWrapper>

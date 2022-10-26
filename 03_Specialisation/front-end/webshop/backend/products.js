@@ -175,7 +175,7 @@ const products = [
     desc: "The HUF x Marvel Radiate Skate Deck is part of the Incredible Hulk 60th Anniversary capsule, in collaboration with Marvel Comics.",
     category: "NewArrival",
     price: "79.95",
-    image: "https://res.cloudinary.com/ordinator/image/upload/c_scale,w_250/v1663661443/SkippySkateboards/22_klp22m.jpg",
+    image: "https://res.cloudinary.com/ordinator/image/upload/v1666793669/SkippySkateboards/hulkdeck_reafuw.png",
   },
   {
     id: "23",
@@ -183,15 +183,15 @@ const products = [
     desc: "including free Griptape Sheet!",
     category: "NewArrival",
     price: "76.95",
-    image: "https://res.cloudinary.com/ordinator/image/upload/c_scale,w_250/v1663661694/SkippySkateboards/24_xag2u6.jpg",
+    image: "https://res.cloudinary.com/ordinator/image/upload/v1666793669/SkippySkateboards/tired1_knexcl.png",
   },
   {
     id: "24",
-    title: "Primitive Ribeiro Mystic Deck Multi 8.0",
+    title: "Primitive Biggie Smalls Deck Multi 8.0",
     desc: "including free Griptape Sheet!",
     category: "NewArrival",
     price: "79.95",
-    image: "https://res.cloudinary.com/ordinator/image/upload/c_scale,w_250/v1663661694/SkippySkateboards/23_v2l0cw.jpg",
+    image: "https://res.cloudinary.com/ordinator/image/upload/v1666793669/SkippySkateboards/primitive_biggie_xfpjoi.png",
   },
 
   {
