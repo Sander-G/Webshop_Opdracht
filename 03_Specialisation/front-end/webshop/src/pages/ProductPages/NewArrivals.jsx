@@ -28,60 +28,49 @@ export function NewArrivals() {
         <h1>New Arrivals</h1>
         <SubHeaderText>Freshly rolled into our store.</SubHeaderText>
       </Banner>
-      <ProdContainer>
-        {isLoading ? (<p>Loading...</p>) :
+    
+
+      <AnimContainer>
+      {isLoading ? (<p>Loading...</p>) :
           error ? (<p>An error occured..</p>) :
             (<>
               {data?.map((product) =>
                 product.category === "NewArrival" ?
-                  <Product key={product.id}>
-                    <AddToFavourites
-                      alt="add to Favourites"
-                      onClick={() => handleAddToFavourites(product)} />
-                    <ProdImg src={product.image} alt={product.name} />
-                    <Title> {product.title} </Title>
-                    <Details>
-                      <span>{product.desc}</span>
-                      <PriceOriginal>€ {product.price}</PriceOriginal>
-                    </Details>
-                    <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
-                  </Product>
-                  : <></>)
-              }
-            </>)
-        }
-      </ProdContainer>
 
-      <AnimContainer>
-        <Wrapper>
+        <Wrapper key={product.id}>
+       
           <Card>
             <Front className="front">
-              <H1>Signature</H1>
-              <P>7.7 deck<Span>2018</Span></P>
-              <Price>$ 89.00</Price>
+           
+              <H1>{product.title}</H1>
+              <P>{product.desc}</P>
+              <Price>€ {product.price}</Price>
             </Front>
 
             <Right className="right">
-              <H2>Signature</H2>
+            <AddToFavourites
+                      alt="add to Favourites"
+                      onClick={() => handleAddToFavourites(product)} />
+              <H2>{product.title}</H2>
               <Ul>
-                <Li>Width	7.7"</Li>
-                <Li>Length	31.75"</Li>
-                <Li>Wheelbase	14"</Li>
-                <Li>Nose	6.875"</Li>
-                <Li>Tail	6.25"</Li>
+                <P>{product.desc}</P>
               </Ul>
-              <Button>Add to cart, yo</Button>
+              <Button  onClick={() => handleAddToCart(product)}>Add to Cart</Button>
             </Right>
 
           </Card>
-          {/* <ImgWrapper className="img-wrapper">
-            <BoardImg src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/577128/deck.png' alt='' /> */}
+         
+          
             <ImgWrapper className="img-wrapper">
-            <BoardImg src='https://res.cloudinary.com/ordinator/image/upload/v1666793669/SkippySkateboards/hulkdeck_reafuw.png' alt='' />
+            <BoardImg src={product.image} alt='' />
           
             
           </ImgWrapper>
         </Wrapper>
+        : <></>)
+              }
+            </>)
+        }
       </AnimContainer>
 
 
