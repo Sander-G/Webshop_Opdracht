@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import backgroundSrc from "./../../images/newArrivalsBanner.jpg";
 import heart from "../../images/heart.svg";
-import {float} from "../../assets/animation"
+import { float } from "../../assets/animation"
 import { useNavigate, Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
@@ -28,51 +28,49 @@ export function NewArrivals() {
         <h1>New Arrivals</h1>
         <SubHeaderText>Freshly rolled into our store.</SubHeaderText>
       </Banner>
-    
 
       <AnimContainer>
-      {isLoading ? (<p>Loading...</p>) :
+        {isLoading ? (<p>Loading...</p>) :
           error ? (<p>An error occured..</p>) :
             (<>
               {data?.map((product) =>
                 product.category === "NewArrival" ?
 
-        <Wrapper key={product.id}>
-       
-          <Card>
-            <Front className="front">
-           
-              <H1>{product.title}</H1>
-              <P>{product.desc}</P>
-              <Price>€ {product.price}</Price>
-            </Front>
+                  <Wrapper key={product.id}>
 
-            <Right className="right">
-            <AddToFavourites
-                      alt="add to Favourites"
-                      onClick={() => handleAddToFavourites(product)} />
-              <H2>{product.title}</H2>
-              <Ul>
-                <P>{product.desc}</P>
-              </Ul>
-              <Button  onClick={() => handleAddToCart(product)}>Add to Cart</Button>
-            </Right>
+                    <Card>
+                      <Front className="front">
 
-          </Card>
-         
-          
-            <ImgWrapper className="img-wrapper">
-            <BoardImg src={product.image} alt='' />
-          
-            
-          </ImgWrapper>
-        </Wrapper>
-        : <></>)
+                        <H1>{product.title}</H1>
+                        <P>{product.desc}</P>
+                        <Price>€ {product.price}</Price>
+                      </Front>
+
+                      <Right className="right">
+                        <AddToFavourites
+                          alt="add to Favourites"
+                          onClick={() => handleAddToFavourites(product)} />
+                        <H2>{product.title}</H2>
+
+                        <P>{product.desc}</P>
+
+                        <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+                      </Right>
+
+                    </Card>
+
+
+                    <ImgWrapper className="img-wrapper">
+                      <BoardImg src={product.image} alt='' />
+
+
+                    </ImgWrapper>
+                  </Wrapper>
+                  : <></>)
               }
             </>)
         }
       </AnimContainer>
-
 
       <StartShopping>
         <Link to="/"><h4>Back to main..</h4></Link>
@@ -84,29 +82,30 @@ export function NewArrivals() {
 // Styled Components
 const AnimContainer = styled.div`
  display: flex;
-  width: 600px;
-  height: 600px;
-  flex-direction: column;
+  width: 90vw;
+  height: 450px;
+  margin-top: 2rem;
+  gap: 1rem;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   padding: 0;
-  overflow: hidden;
-  /* background-image: linear-gradient(-55deg, rgba(50,45,55,1) 0%, rgba(101,96,106,1) 100%); */
   color: black;
   font-family: 'Helvetica';
   font-weight: 300;
-  /* animation: fadeIn .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1; */
 `;
+
 const Wrapper = styled.div`
   width: 280px;
-  height: 450px;
+  height: 550px;
   perspective: 600px;
   position: relative;
 `;
 
 const Card = styled.div`
   width: 320px;
-  height: 450px;
+  height: 550px;
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ(-140px);
@@ -140,19 +139,16 @@ const Card = styled.div`
 
 `;
 
-const Span = styled.span`
-  margin-left: 13px;
-  opacity: .55;
-`
+
 
 const Front = styled.div`
- /* background-image: linear-gradient(180deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%); */
+
   transform: rotateY(0deg) translateZ(160px); 
   border-radius: 34px 3px 0 0;
 `;
 
 const Right = styled.div`
-/* background-image: linear-gradient(0deg, rgba(145,141,144,1) 0%, rgba(92,91,94,0) 100%); */
+
 opacity: 0;
   transform: rotateY(90deg) translateZ(160px);
   border-radius: 0 0 3px 15px;
@@ -167,7 +163,6 @@ opacity: .5;
 `;
 
 const ImgWrapper = styled.div`
-  /* animation: float 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate; */
   animation: ${float};
   animation-duration: 4s;
   animation-iteration-count: infinite;
@@ -178,12 +173,6 @@ const ImgWrapper = styled.div`
   pointer-events: none;
   backface-visibility: hidden;
   `
-
-
-
-
-
-
 const BoardImg = styled.img`
  transform-origin: top right;
   transition: transform 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
@@ -219,41 +208,6 @@ margin: 0;
   font-weight: 300;
   font-size: 16px;
 `
-
-const Ul = styled.ul`
-  margin-left: 21px;
-  padding: 0;
-  font-size: 16px;
-  font-weight: 300;
-  list-style: none;
-`
-
-const Li = styled.li`
-padding-bottom: 8px;
-  position: relative;
- 
-`;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const Container = styled.div`
   width: 100%;
@@ -295,56 +249,6 @@ const SubHeaderText = styled.p`
   text-shadow: 1px 1px #2b2b28;
 `;
 
-const ProdContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 90vw;
-  padding: 1rem 1rem;
-`;
-
-const Product = styled.div`
-  width: 250px;
-  max-width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 1rem auto;
-  padding: 0.5rem;
-  border-radius: 5px;
-  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
-              5px 5px 5px rgba(255, 255, 255, 0.5), 
-              2px 2px 5px rgba(94, 104, 121, 0.3),
-              -2px -2px 5px rgba(94, 104, 121, 0.3);
-`;
-
-const Title = styled.h3`
-  font-size: 2em;
-  font-weight: 400;
-  text-align: left;
-  color: black;
-  margin-top: 0.5em;
-  margin-bottom: 0.1em;
-`;
-
-const ProdImg = styled.img`
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-const Details = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 0.5em;
-`;
-
-const PriceOriginal = styled.span`
-  font-size: 20px;
-  font-weight: 700;
-`;
 
 const Button = styled.button`
   width: 50%;
