@@ -8,7 +8,7 @@ const initialState = {
 export const productsFetch = createAsyncThunk(
     "products/productsFetch",
     async() => {
-       const response = await axios.get("https://charming-faun-2b1949.netlify.app/.netlify/functions/api/products")
+       const response = await axios.get("https://skippysexpressserver.netlify.app/.netlify/functions/api/products")
        return response?.data;
     }
 );
